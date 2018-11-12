@@ -1,0 +1,33 @@
+﻿<Window x:Class="CRM.Istifadəçi"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM"
+        mc:Ignorable="d"
+        Title="Istifadəçi" Height="520.879" Width="414.286" Background="#FFD50000" FontFamily="Verdana" FontSize="14" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="30" Margin="189,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="30" Margin="189,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="30" Margin="189,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="30" Margin="189,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <TextBox x:Name="TxtEmail" HorizontalAlignment="Left" Height="30" Margin="189,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"/>
+        <Label x:Name="label" HorizontalAlignment="Right" Margin="0,60,241,0" VerticalAlignment="Top" Content="Adı" FontSize="24" Foreground="White" Grid.Column="2"/>
+        <Label x:Name="label_Copy" HorizontalAlignment="Right" Margin="0,109,241,0" VerticalAlignment="Top" Content="Soyadı" FontSize="24" Foreground="White" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Label x:Name="label_Copy1" HorizontalAlignment="Right" Margin="0,160,241,0" VerticalAlignment="Top" FontSize="24" Foreground="White" Content="Şifrə" Grid.Column="2"/>
+        <Label x:Name="label_Copy2" HorizontalAlignment="Right" Content="İstifadəçi adı" Margin="-13,205,241,0" VerticalAlignment="Top" FontSize="24" Foreground="White" Grid.ColumnSpan="3"/>
+        <Label x:Name="label_Copy3" HorizontalAlignment="Right" Margin="0,251,241,0" VerticalAlignment="Top" Content="Email" FontSize="24" Foreground="White" Grid.Column="2"/>
+        <ComboBox x:Name="cmbRole" HorizontalAlignment="Left" Margin="189,365,0,0" VerticalAlignment="Top" Width="180" Height="30"
+                  ItemsSource="{Binding Path=Role}"
+                  DisplayMemberPath="RoleName"
+                  SelectedValuePath="RoleId"
+                  SelectedValue="{Binding Path=Role}"
+                  />
+        <Label x:Name="label_Copy4" HorizontalAlignment="Right" Margin="0,360,241,0" VerticalAlignment="Top" Content="Rolu" FontSize="24" Foreground="White"/>
+        <Button x:Name="btnAddUser" Content="Yadda saxla" HorizontalAlignment="Left" Margin="189,420,0,0" VerticalAlignment="Top" Width="180" Height="30" Click="BtnAddUser_OnClick"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="30" Margin="189,309,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.399,0.75"/>
+        <Label x:Name="labelphone" HorizontalAlignment="Right" Margin="0,304,241,0" VerticalAlignment="Top" Content="Mobile" FontSize="24" Foreground="White"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="CRM.Login"
+        mc:Ignorable="d"
+        Title="Login" Height="441.758" Width="658.461" Background="#FF2196F3" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" FontFamily="Verdana" FontSize="14">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="Content/images/download.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="454*"/>
+            <ColumnDefinition Width="51*"/>
+        </Grid.ColumnDefinitions>
+        <Rectangle HorizontalAlignment="Left" Height="291" Margin="151,81,0,0" Stroke="Black" VerticalAlignment="Top" Width="366" Fill="#33FFFFFF" RadiusX="10" RadiusY="10" StrokeThickness="0"/>
+        <Rectangle Fill="#B24B28EA" HorizontalAlignment="Left" Height="90" Margin="287,35,0,0" RadiusY="75" RadiusX="75" Stroke="Black" StrokeThickness="0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="30" Margin="308,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="167" Padding="3,0,3,5" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="Pbxpassword"  HorizontalAlignment="Left" Margin="308,231,0,0" VerticalAlignment="Top" Width="167" Height="30" Padding="0,0,0,5" VerticalContentAlignment="Center"/>
+        <Label x:Name="label" Content="Istifadəçi adı" HorizontalAlignment="Right" Margin="0,191,311,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblsifre" Content="Şifrə" HorizontalAlignment="Right" Margin="0,233,311,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnLogin" Content="Daxil ol" HorizontalAlignment="Left" Margin="322,282,0,0" VerticalAlignment="Top" Width="120" Height="30" Background="#FF1A52E6" Click="btnLogin_Click"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="50
+               " Margin="308,51,0,0" VerticalAlignment="Top" Width="50
+               
+               ">
+            <Image.Source>
+                <BitmapImage UriSource="Content/images/login.png"></BitmapImage>
+            </Image.Source>
+
+        </Image>
+
+    </Grid>
+</Window>

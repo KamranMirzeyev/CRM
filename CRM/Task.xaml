@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CRM"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Class="CRM.Task"
         mc:Ignorable="d"
-        Title="Task" Height="425.275" Width="410.989" Background="#FFD50000">
+        Title="Task" Height="425.275" Width="410.989" Background="#FFD50000"  ContentRendered="Window_ContentRendered" >
     <Grid Margin="0,0,0,-5">
         <ComboBox x:Name="cmbCustomer" HorizontalAlignment="Left" Margin="94,57,0,0" VerticalAlignment="Top" Width="223" Height="30" FontFamily="Verdana" FontSize="14"
                   ItemsSource="{Binding Path=Customer}"
@@ -28,6 +28,8 @@
         <Label x:Name="label1" Content="Qısa izah" HorizontalAlignment="Left" Margin="100,95,0,0" VerticalAlignment="Top" Foreground="White"/>
         <Label x:Name="label2" Content="simvoldan artıq istifadə etməyin" HorizontalAlignment="Left" Margin="123,214,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana"/>
         <Label x:Name="lbl200" Content="200" HorizontalAlignment="Left" Margin="96,214,0,0" VerticalAlignment="Top" FontFamily="Verdana" Foreground="White"/>
+        <Button Content="Yadda saxla" HorizontalAlignment="Left" Margin="160,316,0,0" VerticalAlignment="Top" Width="157" Height="35" TabIndex="5" Background="#FFDAC810" FontFamily="Verdana" FontSize="14" x:Name="btnTaskAdd_Copy" Click="BtnTaskAdd_OnClick"/>
+        <Button Content="Yenilə" HorizontalAlignment="Left" Margin="160,316,0,0" VerticalAlignment="Top" Width="157" Height="35" TabIndex="5" Background="#FFDAC810" FontFamily="Verdana" FontSize="14" x:Name="btnTaskUpdate" Click="btnTaskUpdate_Click"/>
 
 
     </Grid>

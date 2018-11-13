@@ -6,16 +6,19 @@
         xmlns:local="clr-namespace:CRM"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="CRM.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="749.6" Width="1373" WindowState="Maximized" ResizeMode="CanResizeWithGrip">
+        Title="MainWindow" Height="749.6" Width="1373" WindowState="Maximized" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded">
     <Grid Margin="0,0,2,0">
         <Grid Margin="0,0,0,659" x:Name="gdUser">
-            <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" Margin="0,0,-3,0" VerticalAlignment="Top" Width="1366" Background="#1976D2"/>
+            <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" Margin="0,0,-3,0" VerticalAlignment="Top" Width="1366" Background="#1976D2">
+
+            </DockPanel>
+            <Label x:Name="lblCurventUser" Content="" Height="27" VerticalAlignment="Top" Margin="1120,19,67,0" FontFamily="Verdana" FontSize="16" Foreground="White" TextOptions.TextHintingMode="Animated"/>
             <Image x:Name="image" HorizontalAlignment="Left" Height="37" Margin="1301,12,0,0" VerticalAlignment="Top" Width="58" Source="{dx:DXImage Image=BOCustomer_32x32.png}"/>
 
-            <Image Source="Content/images/logo.jpg" Margin="6,4,1298,5"></Image>
+            <Image Source="Content/images/logo.jpg" Margin="6,2,1298,7"></Image>
             <Image Source="Content/images/LogoText.png" Margin="44,6,1199,0"></Image>
-
-            <Menu x:Name="Mainmenu" IsMainMenu="True" HorizontalAlignment="Left"  Height="57" Margin="238,0,0,0" Background="Transparent" Foreground="White" FontSize="24" VerticalAlignment="Top" Width="771">
+            <!--Menu hisse-->
+            <Menu x:Name="Mainmenu" IsMainMenu="True" HorizontalAlignment="Left"  Height="51" Margin="238,6,0,0" Background="Transparent" Foreground="White" FontSize="24" VerticalAlignment="Top" Width="771">
 
                 <MenuItem Header="Dashboard" Height="50" Width="150" x:Name="MenuDashboard" Click="MenuDashboard_OnClick">
                     <MenuItem.Icon >
@@ -30,7 +33,8 @@
                             <Image Source="Content/images/businessman.png"></Image>
                         </StackPanel>
                     </MenuItem.Icon>
-                    <MenuItem Header="Müstəri yarat" Margin="0,0,-1,0" x:Name="CompanyAdd" Click="CompanyAdd_OnClick"></MenuItem>
+                    <MenuItem Header="Bütün müstərilər" Background="#42A5F5"></MenuItem>
+                    <MenuItem Header="Müstəri yarat" Margin="0,0,-1,0" Background="#42A5F5" x:Name="CompanyAdd" Click="CompanyAdd_OnClick"></MenuItem>
 
                 </MenuItem>
                 <MenuItem Header="TaskLar" Height="50" Width="150" x:Name="MenuTasklar">
@@ -39,7 +43,8 @@
                             <Image Source="Content/images/list.png"></Image>
                         </StackPanel>
                     </MenuItem.Icon>
-                    <MenuItem Header="Task yarat" x:Name="TaskAdd" Click="TaskAdd_OnClick"></MenuItem>
+                    <MenuItem Header="Bütün tasklar" x:Name="AllTask" Background="#42A5F5" Click="AllTask_OnClick"></MenuItem>
+                    <MenuItem Header="Task yarat" x:Name="TaskAdd" Background="#42A5F5" Click="TaskAdd_OnClick"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="Rəylər" Height="50" Width="150" x:Name="MenuReyler">
                     <MenuItem.Icon >
@@ -47,16 +52,18 @@
                             <Image Source="Content/images/comment.png"></Image>
                         </StackPanel>
                     </MenuItem.Icon>
-                    <MenuItem Header="Rəy yaz"></MenuItem>
+                    <MenuItem Header="Bütün rəylər" Background="#42A5F5"></MenuItem>
+                    <MenuItem Header="Rəy yaz" Background="#42A5F5" x:Name="ReyAdd" Click="ReyAdd_OnClick"></MenuItem>
                 </MenuItem>
+
                 <MenuItem Header="Istifadəçilər" Height="50" Width="158" x:Name="MenuUsers">
                     <MenuItem.Icon>
                         <StackPanel Orientation="Horizontal">
                             <Image Source="Content/images/specialist-user.png"></Image>
                         </StackPanel>
                     </MenuItem.Icon>
-                    <MenuItem Header="Bütün istifadəçilər"></MenuItem>
-                    <MenuItem Header="Istifadəçi yarat" x:Name="UserAdd" Click="UserAdd_OnClick"></MenuItem>
+                    <MenuItem Header="Bütün istifadəçilər"  Background="#42A5F5" x:Name="AllUser" Margin="0,0,-27,0"></MenuItem>
+                    <MenuItem Header="Istifadəçi yarat" Background="#42A5F5"  x:Name="UserAdd" Click="UserAdd_OnClick"></MenuItem>
                 </MenuItem>
             </Menu>
 
@@ -66,10 +73,10 @@
 
         <!--Dashboard content-->
 
-        <Grid Grid.Row="0" x:Name="PnlDashboard" Margin="0,10,0,-10">
+        <Grid Grid.Row="0" x:Name="PnlDashboard" Margin="10,65,-10,-65">
 
 
-            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="0,144,0,0">
+            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="0,144,0,0" IsReadOnly="True" SelectionChanged="dgDashboard_SelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Şirkət" Binding="{Binding Company}"/>
@@ -82,7 +89,7 @@
                 </DataGrid.Columns>
             </DataGrid>
             <TextBox x:Name="txtTaskAxtar" HorizontalAlignment="Left" Height="30" Margin="937,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontFamily="Verdana"/>
-            <Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1193,83,0,0" VerticalAlignment="Top" Width="100" Height="30" Background="#FFCF0D0D"/>
+            <Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1193,83,0,0" VerticalAlignment="Top" Width="100" Height="30" Background="#FFCF0D0D" Click="btnTaskAxtar_Click"/>
 
 
 

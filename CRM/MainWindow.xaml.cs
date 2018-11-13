@@ -23,6 +23,18 @@ namespace CRM
     {
         CRMEntities db = new CRMEntities();
         public int currentUserID;
+       
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            string name = db.Users.FirstOrDefault(x => x.UserId == currentUserID).Name;
+            string surname = db.Users.FirstOrDefault(x => x.UserId == currentUserID).Surname;
+
+            lblCurventUser.Content = name + " " + surname;
+        }
+
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,21 +43,44 @@ namespace CRM
 
         private void FillDasboard()
         {
+            CRMEntities db = new CRMEntities();
             dgDashboard.Items.Clear();
             string Username = db.Users.FirstOrDefault(x => x.UserId == currentUserID).UserName;
-            foreach (Model.Task task in db.Tasks.ToList())
-            {
-                VwTask vw = new VwTask
-                {
-                    Description = task.Description,
-                    DeadLine = task.DeadlineTime,
-                    Id = task.TaskId,
-                    CreateAt = task.CreationAt,
-                    Company = task.Customer.CustomerName,
-                    FullName = Username
-                };
-                dgDashboard.Items.Add(vw);
 
+            if (db.Users.FirstOrDefault(x => x.UserId == currentUserID).RoleID == 1)
+            {
+                foreach (Model.Task task in db.Tasks.ToList())
+                {
+                    VwTask vw = new VwTask
+                    {
+                        Description = task.Description,
+                        DeadLine = task.DeadlineTime,
+                        Id = task.TaskId,
+                        CreateAt = task.CreationAt,
+                        Company = task.Customer.CustomerName,
+                        FullName = task.User.UserName
+                    };
+                    dgDashboard.Items.Add(vw);
+                    return;
+                }
+            }
+
+            if (db.Users.FirstOrDefault(x=>x.UserId==currentUserID).RoleID==2)
+            {
+                foreach (Model.Task task in db.Tasks.ToList())
+                {
+                    VwTask vw = new VwTask
+                    {
+                        Description = task.Description,
+                        DeadLine = task.DeadlineTime,
+                        Id = task.TaskId,
+                        CreateAt = task.CreationAt,
+                        Company = task.Customer.CustomerName,
+                        FullName = Username
+                    };
+                    dgDashboard.Items.Add(vw);
+                    return;
+                }
             }
         }
         
@@ -60,19 +95,104 @@ namespace CRM
         {
           Task task = new Task();
             task.Show();
+            task.AddTaskButton();
             task.UserID = currentUserID;
         }
 
         private void MenuDashboard_OnClick(object sender, RoutedEventArgs e)
         {
-            
             FillDasboard();
+
         }
 
         private void UserAdd_OnClick(object sender, RoutedEventArgs e)
         {
             Istifadəçi i = new Istifadəçi();
             i.Show();
+        }
+
+
+        private void ReyAdd_OnClick(object sender, RoutedEventArgs e)
+        {
+            Rey rey = new Rey();
+            rey.userid = currentUserID;
+            rey.Show();
+        }
+
+        private void dgDashboard_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (dgDashboard.SelectedItem !=null)
+            {
+                VwTask vwTask = dgDashboard.SelectedItem as VwTask;
+                Task task = new Task();
+                task.Title = "Yenilə";
+                task.UserID = currentUserID;
+                task.MainWindow = this;
+                task.UpdateTaskButton();
+                task.TaskModel = db.Tasks.Find(vwTask.Id);
+                task.ShowDialog();
+            }
+            
+
+        }
+
+        //butun tasklarin cagirilmasi
+        private void AllTask_OnClick(object sender, RoutedEventArgs e)
+        {
+            FillDasboard();
+        }
+
+        //axtarisin olunmasi
+        private void btnTaskAxtar_Click(object sender, RoutedEventArgs e)
+        {
+            dgDashboard.Items.Clear();
+            //textbox bos buraxilmamasi
+            if (string.IsNullOrEmpty(txtTaskAxtar.Text))
+            {
+                MessageBox.Show("Nə axtarmaq istədiyinizi yazın", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
+            string Username = db.Users.FirstOrDefault(x => x.UserId == currentUserID).UserName;
+
+
+            List<Model.Task> tasks = db.Tasks.Where(t=>(t.Customer.CustomerName.Contains(txtTaskAxtar.Text)||t.User.UserName.Contains(txtTaskAxtar.Text)||t.DeadlineTime.ToString().Contains(txtTaskAxtar.Text))).ToList();
+
+            if (db.Users.FirstOrDefault(x => x.UserId == currentUserID).RoleID == 1)
+            {
+                foreach (Model.Task task in tasks)
+                {
+                    VwTask vw = new VwTask
+                    {
+                        Description = task.Description,
+                        DeadLine = task.DeadlineTime,
+                        Id = task.TaskId,
+                        CreateAt = task.CreationAt,
+                        Company = task.Customer.CustomerName,
+                        FullName = task.User.UserName
+                    };
+                    dgDashboard.Items.Add(vw);
+                    return;
+                }
+            }
+
+            if (db.Users.FirstOrDefault(x => x.UserId == currentUserID).RoleID == 2)
+            {
+                foreach (Model.Task task in tasks)
+                {
+                    VwTask vw = new VwTask
+                    {
+                        Description = task.Description,
+                        DeadLine = task.DeadlineTime,
+                        Id = task.TaskId,
+                        CreateAt = task.CreationAt,
+                        Company = task.Customer.CustomerName,
+                        FullName = Username
+                    };
+                    dgDashboard.Items.Add(vw);
+                    return;
+                }
+            }
         }
     }
 }

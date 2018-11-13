@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CRM.Model;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using CRM.Model;
 
 namespace CRM
 {
@@ -47,6 +36,7 @@ namespace CRM
                 MessageBox.Show("", "", MessageBoxButton.OK, MessageBoxImage.Stop);
                 return;
             }
+            //emailin duzgun daxil edilmesinin yxolanilmasi
             if (!Regex.IsMatch(TxtEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
                 MessageBox.Show("Email düzgün deyil", "Xəta", MessageBoxButton.OK, MessageBoxImage.Error);

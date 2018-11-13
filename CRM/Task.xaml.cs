@@ -13,6 +13,7 @@ namespace CRM
     /// </summary>
     public partial class Task : Window
     {
+        //entity cagirldi
         CRMEntities db = new CRMEntities();
         public Model.Task TaskModel;
        
@@ -85,18 +86,18 @@ namespace CRM
             Model.Task task = new Model.Task();
 
             task.CustomerID = c.CustomerId;
-            task.CreationAt=DateTime.Now;
+            task.CreationAt = DateTime.Now;
             task.DeadlineTime = dtpDeadline.SelectedDate.Value;
             task.Description = textRange.Text;
             task.FinishTime = false;
             task.UserID = UserID;
             db.Tasks.Add(task);
             db.SaveChanges();
-            MessageBox.Show("Task əlavə edildi","Bildiriş",MessageBoxButton.OK,MessageBoxImage.Information);
+            MessageBox.Show("Task əlavə edildi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
 
-        //Textrich max uzunlugun oxlanmasi
+        //Textrich max uzunlugun yoxlanmasi
         int say = 200;
         private void rtbDescript_PreviewKeyDown(object sender, KeyEventArgs e)
         {

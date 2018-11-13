@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM"
         mc:Ignorable="d"
-        Title="Rey" Height="450" Width="379.67" Background="#FFD50000">
+        Title="Rey" Height="450" Width="379.67" Background="#FFD50000" WindowStartupLocation="CenterScreen" Foreground="White">
     <Grid Margin="0,0,2,0">
         <ComboBox x:Name="cmbReyCompany" HorizontalAlignment="Left" Margin="98,89,0,0" VerticalAlignment="Top" Width="222" Height="30"
                   ItemsSource="{Binding Path=Customer}"
@@ -24,5 +24,7 @@
         <Button x:Name="btnReyAdd" Content="Yadda saxla" HorizontalAlignment="Left" Margin="98,344,0,0" VerticalAlignment="Top" Width="222" Background="#FF0A179B" FontFamily="Verdana" FontSize="14" Height="30" Click="btnReyAdd_Click"/>
         <Label x:Name="lbl500" Content="500" HorizontalAlignment="Left" Margin="98,304,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana"/>
         <Label x:Name="lbl" Content="simvoldan artıq istifadə etməyin" HorizontalAlignment="Left" Margin="126,304,0,0" VerticalAlignment="Top" FontFamily="Verdana" Foreground="White"/>
+        <Label x:Name="label" Content="Müştəri seçin" HorizontalAlignment="Left" Margin="101,67,0,0" VerticalAlignment="Top" FontFamily="Verdana" Foreground="White"/>
+        <Label x:Name="label1" Content="Rəy yazın" HorizontalAlignment="Left" Margin="101,152,0,0" VerticalAlignment="Top" FontFamily="Verdana" Foreground="White"/>
     </Grid>
 </Window>

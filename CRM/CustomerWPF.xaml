@@ -14,12 +14,12 @@
         <TextBox x:Name="txtOfficeNumber" HorizontalAlignment="Left" Height="30" Margin="187,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.536,0.225"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="30" Margin="187,286,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.536,0.225"/>
         <Button x:Name="btnCustomerAdd" Content="Yadda saxla" HorizontalAlignment="Left" Margin="187,353,0,0" VerticalAlignment="Top" Width="150" Click="btnCustomerAdd_Click" Background="#FF2197E8" BorderBrush="#FF2197E8" Height="30"/>
-        <Label x:Name="label" Content="Müştəri Adı" HorizontalAlignment="Right" Margin="0,47,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
-        <Label x:Name="label_Copy" Content="Məhsuldar şəxs" HorizontalAlignment="Right" Margin="0,92,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
-        <Label x:Name="label_Copy1" Content="Adress" HorizontalAlignment="Right" Margin="0,146,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
-        <Label x:Name="label_Copy2" Content="Mobil Nömrə" HorizontalAlignment="Right" Margin="0,192,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
-        <Label x:Name="label_Copy3" Content="Ofis Nömrə" HorizontalAlignment="Right" Margin="0,241,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
-        <Label x:Name="label_Copy4" Content="Email" HorizontalAlignment="Right" Margin="0,286,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
+        <Label x:Name="label" Content="Müştəri Adı" HorizontalAlignment="Right" Margin="0,47,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Background="{x:Null}" Foreground="White"/>
+        <Label x:Name="label_Copy" Content="Məhsuldar şəxs" HorizontalAlignment="Right" Margin="0,92,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Background="{x:Null}" Foreground="White"/>
+        <Label x:Name="label_Copy1" Content="Adress" HorizontalAlignment="Right" Margin="0,146,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Background="{x:Null}" Foreground="White"/>
+        <Label x:Name="label_Copy2" Content="Mobil Nömrə" HorizontalAlignment="Right" Margin="0,192,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Background="{x:Null}" Foreground="White"/>
+        <Label x:Name="label_Copy3" Content="Ofis Nömrə" HorizontalAlignment="Right" Margin="0,241,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Background="{x:Null}" Foreground="White"/>
+        <Label x:Name="label_Copy4" Content="Email" HorizontalAlignment="Right" Margin="0,286,254,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Background="{x:Null}" Foreground="White"/>
 
     </Grid>
 </Window>

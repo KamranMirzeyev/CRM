@@ -84,12 +84,23 @@
                     <DataGridTextColumn Header="İzahat" Binding="{Binding Description}"/>
                     <DataGridTextColumn Header="Yarandığı Tarix" Binding="{Binding CreateAt}"/>
                     <DataGridTextColumn Header="Bitiş tarixi" Binding="{Binding DeadLine}"/>
-
+                    <DataGridTextColumn Header="Bitib mi" Binding="{Binding Finish}"/>
 
                 </DataGrid.Columns>
             </DataGrid>
             <TextBox x:Name="txtTaskAxtar" HorizontalAlignment="Left" Height="30" Margin="937,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontFamily="Verdana"/>
-            <Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1193,83,0,0" VerticalAlignment="Top" Width="100" Height="30" Background="#FFCF0D0D" Click="btnTaskAxtar_Click"/>
+
+            <!--<Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1193,83,0,0" VerticalAlignment="Top" Width="100" Height="30" Background="#FFCF0D0D" />-->
+            <Button x:Name="btnLogout" Content="Çıxış" HorizontalAlignment="Left" Margin="1288,6,0,0" VerticalAlignment="Top" Width="49" Height="41" Click="BtnLogout_OnClick">
+                <Button.Background>
+                    <ImageBrush ImageSource="Content/images/logout.png"></ImageBrush>
+                </Button.Background>
+
+            </Button>
+            <Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1173,83,0,0" VerticalAlignment="Top" Width="100" Height="30" FontFamily="Verdana" FontSize="14" Click="BtnTaskAxtar_OnClick">
+               
+            </Button>
+
 
 
 

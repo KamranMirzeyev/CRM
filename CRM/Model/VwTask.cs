@@ -13,7 +13,9 @@ namespace CRM.Model
         public string FullName { get; set; }
         public string Description { get; set; }
         public DateTime  CreateAt { get; set; }
-        public DateTime DeadLine { get; set; }  
+        public string DeadLine { get; set; }  
+        public string Finished { get; set; }
+        
     
     }
 }

@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CRM.Model;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using CRM.Model;
 
 namespace CRM
 {
@@ -32,7 +21,8 @@ namespace CRM
 
         public void btnLogin_Click(object sender, RoutedEventArgs e)
 
-        { //Xanalarin bos buraxmamagini yoxlanir
+        { 
+            //Xanalarin bos buraxmamagini yoxlanir
             if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(Pbxpassword.Password))
             {
                 MessageBox.Show("Xana'nı(ları) doldurun", "Xədərdarlıq", MessageBoxButton.OK, MessageBoxImage.Stop);
@@ -80,17 +70,18 @@ namespace CRM
                         return;
 
                     }
-                    //User olmasa mesaj cixartma
-                    else
-                    {
-                        MessageBox.Show("Belə bir istiadəçi yoxdur", "Xəta", MessageBoxButton.OK, MessageBoxImage.Information);
-                        return;
-                    }
+                    
 
                 }
 
             }
-           
+            //User olmasa mesaj cixartma
+            else
+            {
+                MessageBox.Show("Belə bir istiadəçi yoxdur", "Xəta", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
+
         }
     }
 }

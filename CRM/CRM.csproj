@@ -195,6 +195,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\images\logout.png" />
+    <Resource Include="Content\images\logot.ico" />
+    <Resource Include="Content\images\checked.png" />
+    <Resource Include="Content\images\uncheck.png" />
     <Content Include="Model\Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Database.edmx</DependentUpon>

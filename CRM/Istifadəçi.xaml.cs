@@ -49,6 +49,13 @@ namespace CRM
                 return;
             }
 
+             db.Users.Where(x => x.UserName.Contains(txtUsername.Text));
+            //username tekrar olmamasi ucun yoxlama
+            if (db.Users.FirstOrDefault(us=>us.UserName.Contains(txtUsername.Text))!=null)
+            {
+                MessageBox.Show("Belə bir istifadəçi artıq var", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.None);
+                return;
+            }
             //yeni istifadecini elave olunmasi
             Role r = cmbRole.SelectedItem as Role;
 

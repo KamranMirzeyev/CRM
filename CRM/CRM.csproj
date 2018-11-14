@@ -121,6 +121,9 @@
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\vwComment.cs" />
+    <Compile Include="Report.xaml.cs">
+      <DependentUpon>Report.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rey.xaml.cs">
       <DependentUpon>Rey.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Report.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Rey.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

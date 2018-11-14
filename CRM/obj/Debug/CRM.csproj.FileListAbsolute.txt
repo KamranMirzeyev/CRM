@@ -63,3 +63,5 @@ C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllComme
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllComments.baml
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllCompanies.g.cs
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllCompanies.baml
+C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\Report.g.cs
+C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\Report.baml

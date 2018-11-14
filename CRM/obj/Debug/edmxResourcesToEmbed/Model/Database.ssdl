@@ -28,6 +28,7 @@
     <Property Name="NotificationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TaksID" Type="int" Nullable="false" />
     <Property Name="NotificationType" Type="tinyint" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>

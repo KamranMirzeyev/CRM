@@ -1,7 +1,5 @@
 ﻿using CRM.Model;
 using System;
-using System.Collections;
-using System.Data.Entity;
 using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
@@ -27,7 +25,7 @@ namespace CRM
         {
             InitializeComponent();
             FillCmbCustomer();
-
+            FillCmbNote();
             //richtextbox icindeki yazinin silinmesi
             TextRange txt = new TextRange(rtbDescript.Document.ContentStart, rtbDescript.Document.ContentEnd);
             txt.Text = "";
@@ -56,6 +54,8 @@ namespace CRM
         {
             btnTaskAdd.Visibility = Visibility.Hidden;
             chbFinish.Visibility = Visibility.Visible;
+            lblNote.Visibility = Visibility.Hidden;
+            cmbNote.Visibility = Visibility.Hidden;
         }
 
 
@@ -89,6 +89,7 @@ namespace CRM
 
             Model.Task task = new Model.Task();
 
+           
             task.CustomerID = c.CustomerId;
             task.CreationAt = DateTime.Now;
             task.DeadlineTime = dtpDeadline.SelectedDate.Value;
@@ -97,6 +98,14 @@ namespace CRM
             task.UserID = UserID;
             db.Tasks.Add(task);
             db.SaveChanges();
+
+            //Taskda qeyd edilen kimi bildiris elave edilir
+            Notification not = new Notification();
+            not.TaksID = task.TaskId;
+            not.NotificationType = (byte) cmbNote.SelectedIndex;
+            db.Notifications.Add(not);
+            db.SaveChanges();
+
             MessageBox.Show("Task əlavə edildi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
         }
@@ -144,10 +153,6 @@ namespace CRM
 
 
 
-
-
-
-
         }
         private void Window_ContentRendered(object sender, EventArgs e)
         {
@@ -178,11 +183,12 @@ namespace CRM
                 MessageBox.Show("Bitiş tarixini qeyd edin", "Xəbərdarlıq", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-
+            Notification nt = new Notification();
             Model.Task upTask = db.Tasks.Find(TaskModel.TaskId);
             if (chbFinish.IsChecked.Value)
             {
                 upTask.FinishTime = true;
+                nt.IsActive = true;
             }
 
             upTask.CustomerID = Convert.ToInt32(cmbCustomer.SelectedValue);
@@ -197,7 +203,17 @@ namespace CRM
         }
 
 
+        // Isteye gore Notification elave olunma
 
+        private void FillCmbNote()
+        {
+            cmbNote.Items.Add("Istəmirəm");
+            cmbNote.Items.Add("1 gün qalmış");
+            cmbNote.Items.Add("3 gün qalmış");
+            cmbNote.Items.Add("Hər gün");
+            cmbNote.SelectedIndex = 0;
+
+        }
 
     }
 }

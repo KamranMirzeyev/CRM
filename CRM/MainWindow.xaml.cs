@@ -24,8 +24,14 @@ namespace CRM
             string surname = db.Users.FirstOrDefault(x => x.UserId == currentUserID).Surname;
 
             lblCurventUser.Content = name + " " + surname;
-        }
 
+
+            //Notification ekrana cixardilmasi
+            Notification();
+
+
+
+        }
 
 
         public MainWindow()
@@ -33,6 +39,52 @@ namespace CRM
             InitializeComponent();
           
         }
+
+
+        //Notification ekrana cixardilmasi metodu
+        public void Notification()
+        {
+            CRMEntities dbs = new CRMEntities();
+
+            foreach (Notification nt in dbs.Notifications.ToList())
+            {
+                if (nt.Task.User.UserId == currentUserID && nt.IsActive == false)
+                {
+                    switch (nt.NotificationType)
+                    {
+                        case 1:
+
+                            if (nt.Task.DeadlineTime.Subtract(DateTime.Now).TotalHours <= 24)
+                            {
+                                lblnotification.Content +=
+                                    nt.Task.Customer.CustomerName + " : " + nt.Task.Description + " *** ";
+                            }
+
+                            break;
+                        case 2:
+
+                            if (nt.Task.DeadlineTime.Subtract(DateTime.Now).TotalHours > 24 &&
+                                nt.Task.DeadlineTime.Subtract(DateTime.Now).TotalHours < 72)
+                            {
+                                lblnotification.Content +=
+                                    nt.Task.Customer.CustomerName + " : " + nt.Task.Description + " *** ";
+                            }
+
+                            break;
+
+                        case 3:
+                            lblnotification.Content += nt.Task.Customer.CustomerName + " : " + nt.Task.Description + "  ***  ";
+
+
+                            break;
+
+                    }
+                }
+
+            }
+        }
+
+
         //datagrid doldurulmasi
         private void FillDasboard()
         {
@@ -47,7 +99,7 @@ namespace CRM
 
                 foreach (Model.Task task in db.Tasks.ToList())
                 {
-                    string ok = task.FinishTime == false ? "Bitmeyib" : "Bitib";
+                    string ok = task.FinishTime == false ? "Bitməyib" : "Bitib";
                     VwTask vw = new VwTask
                     {
                         
@@ -73,7 +125,7 @@ namespace CRM
 
                 foreach (Model.Task task in ta)
                 {
-                    string ok = task.FinishTime == false ? "Bitmeyib" : "Bitib";
+                    string ok = task.FinishTime == false ? "Bitməyib" : "Bitib";
                     VwTask vw = new VwTask
                     {
                         Description = task.Description,
@@ -109,12 +161,8 @@ namespace CRM
             task.UserID = currentUserID;
             task.ShowDialog();
         }
-        //dashboard tasklarin getirilmesi
-        private void MenuDashboard_OnClick(object sender, RoutedEventArgs e)
-        {
-            FillDasboard();
-
-        }
+       
+       
         //user add
         private void UserAdd_OnClick(object sender, RoutedEventArgs e)
         {
@@ -261,6 +309,19 @@ namespace CRM
         { 
             AllCompanies company = new AllCompanies();
             company.ShowDialog();
+        }
+
+
+        //Tasklarin cagirilmasi
+        private void DashTask_OnClick(object sender, RoutedEventArgs e)
+        {
+            FillDasboard();
+        }
+
+        private void Report_OnClick(object sender, RoutedEventArgs e)
+        {
+           Report r = new Report();
+            r.ShowDialog();
         }
     }
 }

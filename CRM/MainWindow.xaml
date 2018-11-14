@@ -20,12 +20,14 @@
             <!--Menu hisse-->
             <Menu x:Name="Mainmenu" IsMainMenu="True" HorizontalAlignment="Left"  Height="51" Margin="238,6,0,0" Background="Transparent" Foreground="White" FontSize="24" VerticalAlignment="Top" Width="771">
 
-                <MenuItem Header="Dashboard" Height="50" Width="150" x:Name="MenuDashboard" Click="MenuDashboard_OnClick">
+                <MenuItem Header="Dashboard" Height="50" Width="150" x:Name="MenuDashboard">
                     <MenuItem.Icon >
                         <StackPanel Orientation="Horizontal" Background="Transparent">
                             <Image Source="Content/images/Dashboard.png"></Image>
                         </StackPanel>
                     </MenuItem.Icon>
+                    <MenuItem Header="Tasklar" x:Name="dashTask" Background="#42A5F5" Click="DashTask_OnClick"></MenuItem>
+                    <MenuItem Header="Hesablar" x:Name="Report" Background="#42A5F5" Click="Report_OnClick"></MenuItem>
                 </MenuItem>
                 <MenuItem Header="Müştərilər" Height="50" Width="150" x:Name="MenuCustomer">
                     <MenuItem.Icon >
@@ -99,6 +101,8 @@
             <Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1173,83,0,0" VerticalAlignment="Top" Width="100" Height="30" FontFamily="Verdana" FontSize="14" Click="BtnTaskAxtar_OnClick">
                
             </Button>
+            <Label x:Name="label" Content="Xatırlatmalar:" HorizontalAlignment="Left" Margin="26,30,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="#FFB01111"/>
+            <Label x:Name="lblnotification" Content="***  " HorizontalAlignment="Left" Margin="151,32,0,0" VerticalAlignment="Top" FontFamily="Verdana" Background="{x:Null}" Foreground="#FFAC0C0C"/>
 
 
 

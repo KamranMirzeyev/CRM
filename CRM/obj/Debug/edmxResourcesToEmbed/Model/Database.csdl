@@ -33,6 +33,7 @@
     <Property Name="TaksID" Type="Int32" Nullable="false" />
     <Property Name="NotificationType" Type="Byte" Nullable="false" />
     <NavigationProperty Name="Task" Relationship="Self.FK_Notification_Tasks" FromRole="Notification" ToRole="Tasks" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Role">
     <Key>

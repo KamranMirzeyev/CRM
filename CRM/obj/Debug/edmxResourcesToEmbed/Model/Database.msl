@@ -27,6 +27,7 @@
     <EntitySetMapping Name="Notifications">
       <EntityTypeMapping TypeName="CRMModel.Notification">
         <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
           <ScalarProperty Name="TaksID" ColumnName="TaksID" />
           <ScalarProperty Name="NotificationType" ColumnName="NotificationType" />

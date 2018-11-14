@@ -1,10 +1,11 @@
-﻿using CRM.Model;
+﻿using System;
+using CRM.Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-
-
+using System.Windows.Interop;
+using System.Windows.Documents;
 
 namespace CRM
 {
@@ -101,10 +102,12 @@ namespace CRM
 
         private void TaskAdd_OnClick(object sender, RoutedEventArgs e)
         {
-          Task task = new Task();
-            task.Show();
+            Task task = new Task();
+            WindowInteropHelper help= new WindowInteropHelper(task);
+            IntPtr hm = help.Handle;
             task.AddTaskButton();
             task.UserID = currentUserID;
+            task.ShowDialog();
         }
 
         private void MenuDashboard_OnClick(object sender, RoutedEventArgs e)
@@ -116,6 +119,9 @@ namespace CRM
         private void UserAdd_OnClick(object sender, RoutedEventArgs e)
         {
             Istifadəçi i = new Istifadəçi();
+            WindowInteropHelper help = new WindowInteropHelper(i);
+            IntPtr hm = help.Handle;
+            i.AddButton();
             i.Show();
         }
 
@@ -131,14 +137,7 @@ namespace CRM
         {
            
             
-                VwTask vwTask = dgDashboard.SelectedItem as VwTask;
-                Task task = new Task();
-                task.Title = "Yenilə";
-                task.UserID = currentUserID;
-                task.MainWindow = this;
-                task.UpdateTaskButton();
-                task.TaskModel = db.Tasks.Find(vwTask.Id);
-                task.ShowDialog();
+              
             
             
 
@@ -223,6 +222,35 @@ namespace CRM
 
                 }
             }
+        }
+
+        private void AllUser_OnClick(object sender, RoutedEventArgs e)
+        {
+          AllUsers au = new AllUsers();
+            au.ShowDialog();
+        }
+
+        private void dgDashboard_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+
+            if (dgDashboard.SelectedItem != null) 
+            
+            {
+                VwTask vwTask = dgDashboard.SelectedItem as VwTask;
+
+                Task task = new Task();
+                TextRange textRange = new TextRange(task.rtbDescript.Document.ContentStart, task.rtbDescript.Document.ContentEnd);
+                task.Title = "Yenilə";
+                task.UserID = currentUserID;
+                task.MainWindow = this;
+                textRange.Text = vwTask.Description;
+               // task.cmbCustomer.SelectedValue = db.Tasks.FirstOrDefault(x=>x.TaskId==vwTask.Id).CustomerID.ToString();
+                task.UpdateTaskButton();
+                task.TaskModel = db.Tasks.Find(vwTask.Id);
+                task.ShowDialog();
+            }
+
+            
         }
     }
 }

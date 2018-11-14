@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CRM"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="CRM.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="749.6" Width="1373" WindowState="Maximized" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded">
+        Title="Dashboard" Height="749.6" Width="1373" WindowState="Maximized" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded" Icon="Content/images/logo.jpg">
     <Grid Margin="0,0,2,0">
         <Grid Margin="0,0,0,659" x:Name="gdUser">
             <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" Margin="0,0,-3,0" VerticalAlignment="Top" Width="1366" Background="#1976D2">
@@ -62,7 +62,7 @@
                             <Image Source="Content/images/specialist-user.png"></Image>
                         </StackPanel>
                     </MenuItem.Icon>
-                    <MenuItem Header="Bütün istifadəçilər"  Background="#42A5F5" x:Name="AllUser" Margin="0,0,-27,0"></MenuItem>
+                    <MenuItem Header="Bütün istifadəçilər" Click="AllUser_OnClick" Background="#42A5F5" x:Name="AllUser" Margin="0,0,-27,0"></MenuItem>
                     <MenuItem Header="Istifadəçi yarat" Background="#42A5F5"  x:Name="UserAdd" Click="UserAdd_OnClick"></MenuItem>
                 </MenuItem>
             </Menu>
@@ -76,7 +76,7 @@
         <Grid Grid.Row="0" x:Name="PnlDashboard" Margin="10,65,-10,-65">
 
 
-            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="0,144,0,0" IsReadOnly="True" SelectionChanged="dgDashboard_SelectionChanged">
+            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="0,144,0,0" IsReadOnly="True" SelectionChanged="dgDashboard_SelectionChanged" SelectedCellsChanged="dgDashboard_SelectedCellsChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Şirkət" Binding="{Binding Company}"/>

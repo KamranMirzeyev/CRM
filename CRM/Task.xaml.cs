@@ -1,5 +1,6 @@
 ﻿using CRM.Model;
 using System;
+using System.Collections;
 using System.Data.Entity;
 using System.Linq;
 using System.Windows;
@@ -42,12 +43,15 @@ namespace CRM
             }
         }
 
+
+        //add eleyende diger butonlarin gizlenmesi
         public void AddTaskButton()
         {
             btnTaskUpdate.Visibility = Visibility.Hidden;
             chbFinish.Visibility = Visibility.Hidden;
         }
 
+        //update eleyende add buton gizlemesi
         public void UpdateTaskButton()
         {
             btnTaskAdd.Visibility = Visibility.Hidden;
@@ -129,13 +133,21 @@ namespace CRM
         //Task yenilemesi ucun doldurulma metodu
         public void FillAllTask()
         {
-            if (cmbCustomer.SelectedValue!=null)
+            TextRange textRange = new TextRange(rtbDescript.Document.ContentStart, rtbDescript.Document.ContentEnd);
+            if (textRange.Text.Length!=0)
             {
                 cmbCustomer.SelectedValue = TaskModel.CustomerID.ToString();
                 rtbDescript.AppendText(TaskModel.Description);
                 dtpDeadline.Text = TaskModel.DeadlineTime.ToString();
             }
-           
+               
+
+
+
+
+
+
+
         }
         private void Window_ContentRendered(object sender, EventArgs e)
         {

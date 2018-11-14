@@ -57,3 +57,5 @@ C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\Istifad�
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\Istifadəçi.baml
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\Rey.g.cs
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\Rey.baml
+C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllUsers.g.cs
+C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllUsers.baml

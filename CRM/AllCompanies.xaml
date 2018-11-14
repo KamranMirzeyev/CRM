@@ -1,0 +1,21 @@
+﻿<Window x:Class="CRM.AllCompanies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CRM"
+        mc:Ignorable="d"
+        Title="AllCompanies" Height="450" Width="391.209" Background="#FFD50000">
+    <Grid>
+        <Button x:Name="btnCompanyUpdate" Content="Yenilə" HorizontalAlignment="Left" Margin="147,144,0,0" VerticalAlignment="Top" Width="120" Height="30" FontFamily="Verdana" FontSize="14" Click="btnCompanyUpdate_Click"/>
+        <Button x:Name="btnCompanyDelete" Content="Sil" HorizontalAlignment="Left" Margin="147,221,0,0" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="14" Height="30" Click="btnCompanyDelete_Click"/>
+        <ComboBox x:Name="cmbCompany" HorizontalAlignment="Left" Margin="115,63,0,0" VerticalAlignment="Top" Width="180" Height="30"
+                  ItemsSource="{Binding Customer}"
+                  DisplayMemberPath="CustomerName"
+                  SelectedValuePath="CustomerId"
+                  SelectedValue="{Binding Customer}"
+                  />
+        <Label x:Name="label" Content="Şirkət seçin" HorizontalAlignment="Left" Margin="159,32,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
+
+    </Grid>
+</Window>

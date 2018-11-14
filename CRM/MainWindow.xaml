@@ -33,7 +33,7 @@
                             <Image Source="Content/images/businessman.png"></Image>
                         </StackPanel>
                     </MenuItem.Icon>
-                    <MenuItem Header="Bütün müstərilər" Background="#42A5F5"></MenuItem>
+                    <MenuItem Header="Bütün müstərilər" Click="AllCompany_OnClick" x:Name="AllCompany" Background="#42A5F5"></MenuItem>
                     <MenuItem Header="Müstəri yarat" Margin="0,0,-1,0" Background="#42A5F5" x:Name="CompanyAdd" Click="CompanyAdd_OnClick"></MenuItem>
 
                 </MenuItem>
@@ -52,7 +52,7 @@
                             <Image Source="Content/images/comment.png"></Image>
                         </StackPanel>
                     </MenuItem.Icon>
-                    <MenuItem Header="Bütün rəylər" Background="#42A5F5"></MenuItem>
+                    <MenuItem Header="Bütün rəylər" x:Name="AllComment" Click="AllComment_OnClick" Background="#42A5F5"></MenuItem>
                     <MenuItem Header="Rəy yaz" Background="#42A5F5" x:Name="ReyAdd" Click="ReyAdd_OnClick"></MenuItem>
                 </MenuItem>
 
@@ -74,17 +74,16 @@
         <!--Dashboard content-->
 
         <Grid Grid.Row="0" x:Name="PnlDashboard" Margin="10,65,-10,-65">
-
-
-            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="0,144,0,0" IsReadOnly="True" SelectionChanged="dgDashboard_SelectionChanged" SelectedCellsChanged="dgDashboard_SelectedCellsChanged">
+            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="0,144,10,0" IsReadOnly="True" SelectedCellsChanged="dgDashboard_SelectedCellsChanged" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Id}"/>
-                    <DataGridTextColumn Header="Şirkət" Binding="{Binding Company}"/>
-                    <DataGridTextColumn Header="Satıçı" Binding="{Binding FullName}"/>
-                    <DataGridTextColumn Header="İzahat" Binding="{Binding Description}"/>
-                    <DataGridTextColumn Header="Yarandığı Tarix" Binding="{Binding CreateAt}"/>
-                    <DataGridTextColumn Header="Bitiş tarixi" Binding="{Binding DeadLine}"/>
-                    <DataGridTextColumn Header="Bitib mi" Binding="{Binding Finish}"/>
+                    <DataGridTextColumn Header="Şirkət" Width="120" Binding="{Binding Company}"/>
+                    <DataGridTextColumn Header="Satıçı" Width="120" Binding="{Binding FullName}"/>
+                    <DataGridTextColumn Header="İzahat" Width="*" Binding="{Binding Description}"/>
+                    <DataGridTextColumn Header="Yarandığı Tarix" Width="130" Binding="{Binding CreateAt}"/>
+                    <DataGridTextColumn Header="Bitiş tarixi" Width="120" Binding="{Binding DeadLine}"/>
+                    <DataGridTextColumn Header="Bitibmi" Width="80" Binding="{Binding Finished}"/>
+
 
                 </DataGrid.Columns>
             </DataGrid>

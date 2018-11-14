@@ -75,6 +75,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AllComments.xaml.cs">
+      <DependentUpon>AllComments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllCompanies.xaml.cs">
+      <DependentUpon>AllCompanies.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AllUsers.xaml.cs">
       <DependentUpon>AllUsers.xaml</DependentUpon>
     </Compile>
@@ -114,12 +120,21 @@
     <Compile Include="Model\User.cs">
       <DependentUpon>Database.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\vwComment.cs" />
     <Compile Include="Rey.xaml.cs">
       <DependentUpon>Rey.xaml</DependentUpon>
     </Compile>
     <Compile Include="Task.xaml.cs">
       <DependentUpon>Task.xaml</DependentUpon>
     </Compile>
+    <Page Include="AllComments.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllCompanies.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AllUsers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

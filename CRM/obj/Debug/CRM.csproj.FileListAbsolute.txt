@@ -59,3 +59,7 @@ C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\Rey.g.cs
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\Rey.baml
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllUsers.g.cs
 C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllUsers.baml
+C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllComments.g.cs
+C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllComments.baml
+C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllCompanies.g.cs
+C:\Users\Kamran\Documents\Visual Studio 2017\Projects\CRM\CRM\obj\Debug\AllCompanies.baml

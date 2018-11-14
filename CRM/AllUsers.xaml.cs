@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using CRM.Model;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using CRM.Model;
 
 namespace CRM
 {
@@ -48,6 +37,7 @@ namespace CRM
             i.ShowDialog();
         }
 
+        //userin silinmesi
         private void btnUserDelete_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult mb = MessageBox.Show("Silmək istədiyinizdən əminsiniz?", "Sil", MessageBoxButton.YesNo, MessageBoxImage.Question);

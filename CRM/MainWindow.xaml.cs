@@ -17,7 +17,7 @@ namespace CRM
         CRMEntities db = new CRMEntities();
         public int currentUserID;
        
-
+        //userin kim oldugu tapilmasi
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             string name = db.Users.FirstOrDefault(x => x.UserId == currentUserID).Name;
@@ -33,7 +33,7 @@ namespace CRM
             InitializeComponent();
           
         }
-
+        //datagrid doldurulmasi
         private void FillDasboard()
         {
             CRMEntities db = new CRMEntities();
@@ -93,29 +93,29 @@ namespace CRM
 
         }
         
-
+        //company add olunma
         private void CompanyAdd_OnClick(object sender, RoutedEventArgs e)
         {
           CustomerWPF custom = new CustomerWPF();
             custom.Show();
         }
-
+        //task add olunma
         private void TaskAdd_OnClick(object sender, RoutedEventArgs e)
         {
             Task task = new Task();
-            WindowInteropHelper help= new WindowInteropHelper(task);
-            IntPtr hm = help.Handle;
+            //WindowInteropHelper help= new WindowInteropHelper(task);
+            //IntPtr hm = help.Handle;
             task.AddTaskButton();
             task.UserID = currentUserID;
             task.ShowDialog();
         }
-
+        //dashboard tasklarin getirilmesi
         private void MenuDashboard_OnClick(object sender, RoutedEventArgs e)
         {
             FillDasboard();
 
         }
-
+        //user add
         private void UserAdd_OnClick(object sender, RoutedEventArgs e)
         {
             Istifadəçi i = new Istifadəçi();
@@ -125,7 +125,7 @@ namespace CRM
             i.Show();
         }
 
-
+        //rey elave olunma
         private void ReyAdd_OnClick(object sender, RoutedEventArgs e)
         {
             Rey rey = new Rey();
@@ -133,16 +133,7 @@ namespace CRM
             rey.Show();
         }
 
-        private void dgDashboard_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-           
-            
-              
-            
-            
-
-        }
-
+       
         //butun tasklarin cagirilmasi
         private void AllTask_OnClick(object sender, RoutedEventArgs e)
         {
@@ -150,7 +141,7 @@ namespace CRM
         }
 
         
-
+        //logout buton
         private void BtnLogout_OnClick(object sender, RoutedEventArgs e)
         {
            MessageBoxResult mbr=  MessageBox.Show("Çıxmaq istədiyinizdən əminsiz?", "Çıxış", MessageBoxButton.YesNo,MessageBoxImage.Question);
@@ -175,7 +166,9 @@ namespace CRM
 
 
 
-            List<Model.Task> tasks = db.Tasks.Where(t => (t.Customer.CustomerName.Contains(txtTaskAxtar.Text) || t.User.UserName.Contains(txtTaskAxtar.Text))).ToList();
+            List<Model.Task> tasks = db.Tasks.Where(t =>
+                (t.Customer.CustomerName.Contains(txtTaskAxtar.Text) ||
+                 ((t.User.Name + " " + t.User.Surname).Contains(txtTaskAxtar.Text)))).ToList();
 
 
             //admindirse hamsi gelecek
@@ -224,12 +217,14 @@ namespace CRM
             }
         }
 
+        //butun userlerie baxis update ve delete
         private void AllUser_OnClick(object sender, RoutedEventArgs e)
         {
           AllUsers au = new AllUsers();
             au.ShowDialog();
         }
 
+        //datagrid takslarin update olunmasi
         private void dgDashboard_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
 
@@ -244,13 +239,28 @@ namespace CRM
                 task.UserID = currentUserID;
                 task.MainWindow = this;
                 textRange.Text = vwTask.Description;
-               // task.cmbCustomer.SelectedValue = db.Tasks.FirstOrDefault(x=>x.TaskId==vwTask.Id).CustomerID.ToString();
+               
                 task.UpdateTaskButton();
                 task.TaskModel = db.Tasks.Find(vwTask.Id);
                 task.ShowDialog();
             }
 
             
+        }
+
+        //butun commentlere baxis
+        private void AllComment_OnClick(object sender, RoutedEventArgs e)
+        {
+            AllComments ac = new AllComments();
+            ac.ShowDialog();
+        }
+
+        //butun sirketlere baxis
+        private void AllCompany_OnClick(object sender, RoutedEventArgs e)
+
+        { 
+            AllCompanies company = new AllCompanies();
+            company.ShowDialog();
         }
     }
 }

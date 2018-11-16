@@ -31,12 +31,14 @@ namespace CRM
             }
         }
 
+        //yeni istifadəçi yaradılarkən yenilə butonun gizlədilməsi
         public void AddButton()
         {
             btnUserUpdate.Visibility = Visibility.Hidden;
           
         }
 
+        //istifadəçi yenilənərkən yadda saxla butonu gizlədildi
         public void AdUpdateandDelete()
         {
             btnAddUser.Visibility = Visibility.Hidden;
@@ -57,6 +59,7 @@ namespace CRM
             if (!Regex.IsMatch(TxtEmail.Text, @"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
                 MessageBox.Show("Email düzgün deyil", "Xəta", MessageBoxButton.OK, MessageBoxImage.Error);
+                Logger.Write("error","Admin yeni istifadəçi yaradarkən mail duz daxil etmədi");
                 return;
             }
             //combobox yoxlanilmasi secilmeyibse error mesaj
@@ -88,6 +91,8 @@ namespace CRM
             db.SaveChanges();
             MessageBox.Show("Yeni istifadəçi yaradıldı", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
+
+            Logger.Write("success","Admin" + u.UserName + " adda yeni bir istifadəçi yaratdı");
             //finish
         }
 
@@ -149,6 +154,7 @@ namespace CRM
             u.RoleID = r.RoleId;
             db.SaveChanges();
             MessageBox.Show("Yeni istifadəçi yeniləndi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
+            Logger.Write("success","Admin "+ u.UserName + " istifadəçisinin profilində dəyişiklik etdi");
             this.Close();
         }
     }

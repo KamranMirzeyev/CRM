@@ -61,6 +61,8 @@ namespace CRM
             db.Comments.Add(com);
             db.SaveChanges();
             MessageBox.Show("Rəy əlavə edildi","Bildiriş",MessageBoxButton.OK,MessageBoxImage.Information);
+            string username = db.Users.FirstOrDefault(x => x.UserId == userid).UserName;
+            Logger.Write("success", username+ " yeni bir rəy yaratdı");
             this.Close();
 
         }

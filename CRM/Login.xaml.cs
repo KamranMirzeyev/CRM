@@ -15,6 +15,7 @@ namespace CRM
         public Login()
         {
             InitializeComponent();
+            Logger.Write("Success","Proqrama daxil olundu");
         }
 
        
@@ -41,15 +42,20 @@ namespace CRM
                          int UserID = db.Users.FirstOrDefault(x => x.UserName == txtUsername.Text).UserId;
                         main.currentUserID = UserID;
 
-                        foreach (Window window in Application.Current.Windows)
-                        {
-                            if (window.GetType() == typeof(MainWindow))
-                            {
-                                
 
+                        string Username = db.Users.FirstOrDefault(x => x.UserId == UserID).UserName;
+                        Logger.Write("success",Username +" proqrama daxil oldu");
 
-                            }
-                        }
+                        //ehtiyac olarsa burda elave usere gore gorunusu deyismek olar
+
+                        //foreach (Window window in Application.Current.Windows)
+                        //{
+                        //    if (window.GetType() == typeof(MainWindow))
+                        //    {
+
+                        //    }
+                        //}
+
                         if (db.Users.First(x=>x.UserId==UserID).RoleID==2)
                         {
                            
@@ -79,6 +85,7 @@ namespace CRM
             else
             {
                 MessageBox.Show("Belə bir istiadəçi yoxdur", "Xəta", MessageBoxButton.OK, MessageBoxImage.Information);
+                Logger.Write("error","Username ve ya parolunu sehv daxil edib");
                 return;
             }
 

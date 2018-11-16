@@ -17,6 +17,8 @@ namespace CRM
         }
         CRMEntities db = new CRMEntities();
 
+        public int UserId;
+
         //combobox doldurulmasi
         private void FillCmbCompany()
         {
@@ -38,11 +40,13 @@ namespace CRM
                 db.Customers.Remove(cus);
                 db.SaveChanges();
                 MessageBox.Show("Istifadəçi silindi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
+                string username = db.Users.FirstOrDefault(x => x.UserId == UserId).UserName;
+                Logger.Write("success",username+" " +cus.CustomerName +" şirkətini sildi");
                 this.Close();
             }
         }
 
-        //Company update olunmasi
+        //Company update olunmasi ucun doldurulma
         private void btnCompanyUpdate_Click(object sender, RoutedEventArgs e)
         {
             CustomerWPF c = new CustomerWPF();

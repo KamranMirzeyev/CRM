@@ -16,13 +16,17 @@ namespace CRM
         }
         CRMEntities db =new CRMEntities();
 
+        //comboboxun doldurulması
         private void FillAllUserCmb()
         {
-            foreach (User user in db.Users.ToList())
+            CRMEntities data = new CRMEntities();
+            foreach (User user in data.Users.ToList())
             {
                 cmbAllUser.Items.Add(user);
             }
         }
+
+        //İstifadənin yeniləməsi ucun doldurulması
         private void btnAllUser_Click(object sender, RoutedEventArgs e)
         {
             Istifadəçi i = new Istifadəçi();
@@ -45,9 +49,11 @@ namespace CRM
             {
                 User u = cmbAllUser.SelectedItem as User;
                 User user = db.Users.FirstOrDefault(x => x.UserId == u.UserId);
+                string username = db.Users.FirstOrDefault(x => x.UserId == u.UserId).UserName;
                 db.Users.Remove(user);
                 db.SaveChanges();
                 MessageBox.Show("Istifadəçi silindi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
+                Logger.Write("success","Admin "+ username + " adlı istifadəçini sildi");
                 this.Close();
             }
            

@@ -16,6 +16,7 @@ namespace CRM
     {
         CRMEntities db = new CRMEntities();
         public int currentUserID;
+        
        
         //userin kim oldugu tapilmasi
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -26,18 +27,15 @@ namespace CRM
             lblCurventUser.Content = name + " " + surname;
 
 
-            //Notification ekrana cixardilmasi
-            Notification();
-
-
-
         }
 
 
         public MainWindow()
         {
             InitializeComponent();
-          
+
+            //Notification ekrana cixardilmasi
+            Notification();
         }
 
 
@@ -57,7 +55,7 @@ namespace CRM
                             if (nt.Task.DeadlineTime.Subtract(DateTime.Now).TotalHours <= 24)
                             {
                                 lblnotification.Content +=
-                                    nt.Task.Customer.CustomerName + " : " + nt.Task.Description + " *** ";
+                                    nt.Task.Customer.CustomerName + " : " + nt.Task.Description + "*** ";
                             }
 
                             break;
@@ -67,13 +65,13 @@ namespace CRM
                                 nt.Task.DeadlineTime.Subtract(DateTime.Now).TotalHours < 72)
                             {
                                 lblnotification.Content +=
-                                    nt.Task.Customer.CustomerName + " : " + nt.Task.Description + " *** ";
+                                    nt.Task.Customer.CustomerName + " : " + nt.Task.Description + "*** ";
                             }
 
                             break;
 
                         case 3:
-                            lblnotification.Content += nt.Task.Customer.CustomerName + " : " + nt.Task.Description + "  ***  ";
+                            lblnotification.Content += nt.Task.Customer.CustomerName + " : " + nt.Task.Description + "*** ";
 
 
                             break;
@@ -86,18 +84,18 @@ namespace CRM
 
 
         //datagrid doldurulmasi
-        private void FillDasboard()
+        public void FillDasboard()
         {
-            CRMEntities db = new CRMEntities();
+            CRMEntities dbt = new CRMEntities();
             dgDashboard.Items.Clear();
            
 
             //admindirse hamsi gelecek
             if (db.Users.FirstOrDefault(x => x.UserId == currentUserID).RoleID == 1)
             {
-                
+                List<Model.Task> taks = dbt.Tasks.Where(x => x.FinishTime == false).ToList();
 
-                foreach (Model.Task task in db.Tasks.ToList())
+                foreach (Model.Task task in taks)
                 {
                     string ok = task.FinishTime == false ? "Bitməyib" : "Bitib";
                     VwTask vw = new VwTask
@@ -121,7 +119,7 @@ namespace CRM
             //moderatordusa ancaq oz yazdigi
             if (db.Users.FirstOrDefault(x => x.UserId == currentUserID).RoleID == 2)
             {
-                List<Model.Task> ta = db.Tasks.Where(x => x.UserID == currentUserID).ToList();
+                List<Model.Task> ta = db.Tasks.Where(x => (x.UserID == currentUserID) &&(x.FinishTime==false)).ToList();
 
                 foreach (Model.Task task in ta)
                 {
@@ -149,12 +147,14 @@ namespace CRM
         private void CompanyAdd_OnClick(object sender, RoutedEventArgs e)
         {
           CustomerWPF custom = new CustomerWPF();
+            custom.AddButton();
+            custom.UserID = currentUserID;
             custom.Show();
         }
         //task add olunma
         private void TaskAdd_OnClick(object sender, RoutedEventArgs e)
         {
-            Task task = new Task();
+            Task task = new Task(this);
             //WindowInteropHelper help= new WindowInteropHelper(task);
             //IntPtr hm = help.Handle;
             task.AddTaskButton();
@@ -167,8 +167,7 @@ namespace CRM
         private void UserAdd_OnClick(object sender, RoutedEventArgs e)
         {
             Istifadəçi i = new Istifadəçi();
-            WindowInteropHelper help = new WindowInteropHelper(i);
-            IntPtr hm = help.Handle;
+           
             i.AddButton();
             i.Show();
         }
@@ -281,15 +280,18 @@ namespace CRM
             {
                 VwTask vwTask = dgDashboard.SelectedItem as VwTask;
 
-                Task task = new Task();
+                Task task = new Task(this);
                 TextRange textRange = new TextRange(task.rtbDescript.Document.ContentStart, task.rtbDescript.Document.ContentEnd);
                 task.Title = "Yenilə";
                 task.UserID = currentUserID;
-                task.MainWindow = this;
+                
                 textRange.Text = vwTask.Description;
                
                 task.UpdateTaskButton();
                 task.TaskModel = db.Tasks.Find(vwTask.Id);
+
+                string Username = db.Users.FirstOrDefault(x => x.UserId == currentUserID).UserName;
+                Logger.Write("success", Username + " taskda yeniləmək metodu çağırdı");
                 task.ShowDialog();
             }
 
@@ -308,6 +310,7 @@ namespace CRM
 
         { 
             AllCompanies company = new AllCompanies();
+            company.UserId = currentUserID;
             company.ShowDialog();
         }
 
@@ -318,6 +321,8 @@ namespace CRM
             FillDasboard();
         }
 
+
+        //Hesabat hissesi
         private void Report_OnClick(object sender, RoutedEventArgs e)
         {
            Report r = new Report();

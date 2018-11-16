@@ -76,7 +76,7 @@
         <!--Dashboard content-->
 
         <Grid Grid.Row="0" x:Name="PnlDashboard" Margin="10,65,-10,-65">
-            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="0,144,10,0" IsReadOnly="True" SelectedCellsChanged="dgDashboard_SelectedCellsChanged" AutoGenerateColumns="False">
+            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="10,222,0,70" IsReadOnly="True" SelectedCellsChanged="dgDashboard_SelectedCellsChanged" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Şirkət" Width="120" Binding="{Binding Company}"/>
@@ -89,20 +89,16 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-            <TextBox x:Name="txtTaskAxtar" HorizontalAlignment="Left" Height="30" Margin="937,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontFamily="Verdana"/>
+            <TextBox x:Name="txtTaskAxtar" HorizontalAlignment="Left" Height="30" Margin="948,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" FontFamily="Verdana"/>
 
-            <!--<Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1193,83,0,0" VerticalAlignment="Top" Width="100" Height="30" Background="#FFCF0D0D" />-->
-            <Button x:Name="btnLogout" Content="Çıxış" HorizontalAlignment="Left" Margin="1288,6,0,0" VerticalAlignment="Top" Width="49" Height="41" Click="BtnLogout_OnClick">
-                <Button.Background>
-                    <ImageBrush ImageSource="Content/images/logout.png"></ImageBrush>
-                </Button.Background>
+
+            <Button x:Name="btnLogout" Content="Çıxış" HorizontalAlignment="Left" Margin="1288,6,0,0" VerticalAlignment="Top" Width="49" Height="41" Click="BtnLogout_OnClick" Background="Gray"/>
+            <Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1184,161,0,0" VerticalAlignment="Top" Width="100" Height="30" FontFamily="Verdana" FontSize="14" Click="BtnTaskAxtar_OnClick">
 
             </Button>
-            <Button x:Name="btnTaskAxtar" Content="Axtar" HorizontalAlignment="Left" Margin="1173,83,0,0" VerticalAlignment="Top" Width="100" Height="30" FontFamily="Verdana" FontSize="14" Click="BtnTaskAxtar_OnClick">
-               
-            </Button>
-            <Label x:Name="label" Content="Xatırlatmalar:" HorizontalAlignment="Left" Margin="26,30,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="#FFB01111"/>
-            <Label x:Name="lblnotification" Content="***  " HorizontalAlignment="Left" Margin="151,32,0,0" VerticalAlignment="Top" FontFamily="Verdana" Background="{x:Null}" Foreground="#FFAC0C0C"/>
+            <Label x:Name="label" Content="Xatırlatmalar:" HorizontalAlignment="Left" Margin="26,8,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="#FFB01111"/>
+            <Label x:Name="lblnotification" Content="***  " HorizontalAlignment="Left" Margin="151,10,0,0" VerticalAlignment="Top" FontFamily="Verdana" Background="{x:Null}" Foreground="#FFAC0C0C"/>
+            <Label x:Name="label1" Content="Axtarış bütün tasklarda axtarılacaq" HorizontalAlignment="Left" Margin="948,131,0,0" VerticalAlignment="Top" FontFamily="Verdana"/>
 
 
 

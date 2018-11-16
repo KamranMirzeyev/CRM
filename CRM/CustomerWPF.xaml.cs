@@ -1,4 +1,5 @@
-﻿using CRM.Model;
+﻿using System.Linq;
+using CRM.Model;
 using System.Text.RegularExpressions;
 using System.Windows;
 
@@ -17,6 +18,7 @@ namespace CRM
 
         public AllCompanies AllCompany;
         public Customer ModelCustomer;
+        public int UserID;
 
         //Yeni musteri elave etme
         private void btnCustomerAdd_Click(object sender, RoutedEventArgs e)
@@ -45,15 +47,18 @@ namespace CRM
             db.Customers.Add(customer);
             db.SaveChanges();
             MessageBox.Show("Şirkət əlavə edildi", "Məlumat", MessageBoxButton.OK, MessageBoxImage.Information);
+            string Username = db.Users.FirstOrDefault(x => x.UserId == UserID).UserName;
+            Logger.Write("success",Username+ " yeni şirkət əlavə etdi");
             this.Close();
         }
 
-
+        //add olunanda yenilə butonun gizlədilməsi
         public void AddButton()
         {
             btnCustomerUpdate.Visibility = Visibility.Hidden;
         }
 
+        //yeniləmədə add butonu gizlədilməsi
         public void UpdateButton()
         {
             btnCustomerAdd.Visibility = Visibility.Hidden;
@@ -84,6 +89,8 @@ namespace CRM
             customer.Email = txtEmail.Text;
             db.SaveChanges();
             MessageBox.Show("Şirkət məlumatları yeniləndi", "Məlumat", MessageBoxButton.OK, MessageBoxImage.Information);
+            string Username = db.Users.FirstOrDefault(x => x.UserId == UserID).UserName;
+            Logger.Write("success", Username + " "+customer.CustomerName +" şirkətinin profilində dəyişiklik etdi");
             this.Close();
         }
 

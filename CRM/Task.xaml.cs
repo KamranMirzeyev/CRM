@@ -12,20 +12,22 @@ namespace CRM
     /// </summary>
     public partial class Task : Window
     {
-        //entity cagirldi
+        //entity cagrildi
         CRMEntities db = new CRMEntities();
         public Model.Task TaskModel;
-       
-        public MainWindow MainWindow;
+        
+        public MainWindow MainWindows;
         public int UserID;
 
 
        
-        public Task()
+        public Task(MainWindow main)
         {
             InitializeComponent();
+            this.MainWindows = main;
             FillCmbCustomer();
             FillCmbNote();
+
             //richtextbox icindeki yazinin silinmesi
             TextRange txt = new TextRange(rtbDescript.Document.ContentStart, rtbDescript.Document.ContentEnd);
             txt.Text = "";
@@ -105,8 +107,11 @@ namespace CRM
             not.NotificationType = (byte) cmbNote.SelectedIndex;
             db.Notifications.Add(not);
             db.SaveChanges();
-
+            MainWindows.FillDasboard();
+            MainWindows.Notification();
             MessageBox.Show("Task əlavə edildi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
+            string Username = db.Users.FirstOrDefault(x => x.UserId == UserID).UserName;
+            Logger.Write("success", Username + " yeni task yaratdı");
             this.Close();
         }
 
@@ -183,12 +188,12 @@ namespace CRM
                 MessageBox.Show("Bitiş tarixini qeyd edin", "Xəbərdarlıq", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-            Notification nt = new Notification();
+           
             Model.Task upTask = db.Tasks.Find(TaskModel.TaskId);
             if (chbFinish.IsChecked.Value)
             {
                 upTask.FinishTime = true;
-                nt.IsActive = true;
+               
             }
 
             upTask.CustomerID = Convert.ToInt32(cmbCustomer.SelectedValue);
@@ -197,7 +202,21 @@ namespace CRM
             upTask.UserID = UserID;
             upTask.CreationAt = TaskModel.CreationAt;
             db.SaveChanges();
+
+           
+            if (upTask.FinishTime == true)
+            {
+                int noteId = db.Notifications.FirstOrDefault(x => x.TaksID == upTask.TaskId).NotificationId;
+                Notification nt = db.Notifications.FirstOrDefault(x => x.NotificationId == noteId);
+                nt.IsActive = true;
+                db.SaveChanges();
+            }
+
+            MainWindows.Notification();
+            MainWindows.FillDasboard();
             MessageBox.Show("Task yeniləndi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
+            string Username = db.Users.FirstOrDefault(x => x.UserId == UserID).UserName;
+            Logger.Write("success", Username + " taskı yenilədi");
             this.Close();
 
         }

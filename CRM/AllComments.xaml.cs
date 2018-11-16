@@ -16,6 +16,8 @@ namespace CRM
             FillReyDataGrid();
         }
         CRMEntities db = new CRMEntities();
+
+        //datagrid doldurulması
         private void FillReyDataGrid()
         {
             dgRey.Items.Clear();
@@ -33,6 +35,8 @@ namespace CRM
             }
         }
 
+
+        //sirkət adina və userin ad ve soyadina gore axtariş
         private void btnReyAxtar_Click(object sender, RoutedEventArgs e)
         {
             dgRey.Items.Clear();

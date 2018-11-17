@@ -1,4 +1,5 @@
-﻿using CRM.Model;
+﻿using System;
+using CRM.Model;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -86,6 +87,7 @@ namespace CRM
             u.Password = txtPassword.Text;
             u.PhoneNumber = txtPhone.Text;
             u.Email = TxtEmail.Text;
+            u.CreateAt=DateTime.Now;
             u.RoleID = r.RoleId;
             db.Users.Add(u);
             db.SaveChanges();

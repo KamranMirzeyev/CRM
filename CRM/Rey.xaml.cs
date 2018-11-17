@@ -1,4 +1,5 @@
-﻿using CRM.Model;
+﻿using System;
+using CRM.Model;
 using System.Linq;
 using System.Windows;
 using System.Windows.Documents;
@@ -57,7 +58,7 @@ namespace CRM
             com.UserID = userid;
             com.CustomerID = c.CustomerId;
             com.CommentText = textRange.Text;
-
+            com.CreateAt=DateTime.Now;
             db.Comments.Add(com);
             db.SaveChanges();
             MessageBox.Show("Rəy əlavə edildi","Bildiriş",MessageBoxButton.OK,MessageBoxImage.Information);

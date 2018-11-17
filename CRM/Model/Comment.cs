@@ -18,6 +18,7 @@ namespace CRM.Model
         public int UserID { get; set; }
         public int CustomerID { get; set; }
         public string CommentText { get; set; }
+        public System.DateTime CreateAt { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual User User { get; set; }

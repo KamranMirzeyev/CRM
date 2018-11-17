@@ -105,6 +105,7 @@ namespace CRM
             Notification not = new Notification();
             not.TaksID = task.TaskId;
             not.NotificationType = (byte) cmbNote.SelectedIndex;
+            not.Create=DateTime.Now;
             db.Notifications.Add(not);
             db.SaveChanges();
             MainWindows.FillDasboard();

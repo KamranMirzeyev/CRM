@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CRM"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" x:Class="CRM.MainWindow"
         mc:Ignorable="d"
-        Title="Dashboard" Height="749.6" Width="1373" WindowState="Maximized" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded" Icon="Content/images/logo.jpg">
+        Title="Dashboard" Height="749.6" Width="1373" WindowState="Maximized" ResizeMode="CanResizeWithGrip" Loaded="Window_Loaded" Icon="Content/images/logo.jpg" WindowStyle="None">
     <Grid Margin="0,0,2,0">
         <Grid Margin="0,0,0,659" x:Name="gdUser">
             <DockPanel HorizontalAlignment="Left" Height="60" LastChildFill="False" Margin="0,0,-3,0" VerticalAlignment="Top" Width="1366" Background="#1976D2">
@@ -15,8 +15,8 @@
             <Label x:Name="lblCurventUser" Content="" Height="27" VerticalAlignment="Top" Margin="1120,19,67,0" FontFamily="Verdana" FontSize="16" Foreground="White" TextOptions.TextHintingMode="Animated"/>
             <Image x:Name="image" HorizontalAlignment="Left" Height="37" Margin="1301,12,0,0" VerticalAlignment="Top" Width="58" Source="{dx:DXImage Image=BOCustomer_32x32.png}"/>
 
-            <Image Source="Content/images/logo.jpg" Margin="6,2,1298,7"></Image>
-            <Image Source="Content/images/LogoText.png" Margin="44,6,1199,0"></Image>
+            <Image Source="Content/images/logo.jpg" Margin="6,-2,1319,27"></Image>
+            <Image Source="Content/images/LogoText.png" Margin="36,8,1225,30"></Image>
             <!--Menu hisse-->
             <Menu x:Name="Mainmenu" IsMainMenu="True" HorizontalAlignment="Left"  Height="51" Margin="238,6,0,0" Background="Transparent" Foreground="White" FontSize="24" VerticalAlignment="Top" Width="771">
 

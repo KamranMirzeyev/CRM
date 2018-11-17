@@ -2,3 +2,21 @@
 17.11.2018 00:11:34 success : Kamran proqrama daxil oldu
 17.11.2018 00:11:41 success : Kamrantaskda yeniləmək metodu çağırdı
 17.11.2018 00:12:54 success : Kamran yeni şirkət əlavə etdi
+17.11.2018 15:42:45 Success : Proqrama daxil olundu
+17.11.2018 17:19:26 Success : Proqrama daxil olundu
+17.11.2018 17:20:29 success : Kamran proqrama daxil oldu
+17.11.2018 17:57:55 Success : Proqrama daxil olundu
+17.11.2018 17:58:08 success : Kamran proqrama daxil oldu
+17.11.2018 18:00:14 success : Kamran sistemdən çıxdı
+17.11.2018 18:04:41 Success : Proqrama daxil olundu
+17.11.2018 18:04:49 success : Kamran proqrama daxil oldu
+17.11.2018 18:05:34 success : Kamran sistemdən çıxdı
+17.11.2018 18:07:24 Success : Proqrama daxil olundu
+17.11.2018 18:07:30 success : Kamran proqrama daxil oldu
+17.11.2018 18:08:30 success : Kamran sistemdən çıxdı
+17.11.2018 18:09:27 Success : Proqrama daxil olundu
+17.11.2018 18:09:33 success : Kamran proqrama daxil oldu
+17.11.2018 18:09:57 success : Kamran sistemdən çıxdı
+17.11.2018 18:14:56 Success : Proqrama daxil olundu
+17.11.2018 18:15:05 success : Kamran proqrama daxil oldu
+17.11.2018 18:15:23 success : Kamran sistemdən çıxdı

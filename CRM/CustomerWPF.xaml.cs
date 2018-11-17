@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using CRM.Model;
 using System.Text.RegularExpressions;
 using System.Windows;
@@ -44,6 +45,7 @@ namespace CRM
             customer.Mobile = txtMobile.Text;
             customer.OfficeNumber = txtOfficeNumber.Text;
             customer.Email = txtEmail.Text;
+            customer.CreateAt=DateTime.Now;
             db.Customers.Add(customer);
             db.SaveChanges();
             MessageBox.Show("Şirkət əlavə edildi", "Məlumat", MessageBoxButton.OK, MessageBoxImage.Information);

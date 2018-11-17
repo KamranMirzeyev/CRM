@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Comments">
       <EntityTypeMapping TypeName="CRMModel.Comment">
         <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
           <ScalarProperty Name="CommentId" ColumnName="CommentId" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
@@ -14,6 +15,7 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="CRMModel.Customer">
         <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
           <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
           <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
           <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
@@ -27,6 +29,7 @@
     <EntitySetMapping Name="Notifications">
       <EntityTypeMapping TypeName="CRMModel.Notification">
         <MappingFragment StoreEntitySet="Notification">
+          <ScalarProperty Name="Create" ColumnName="Create" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="NotificationId" ColumnName="NotificationId" />
           <ScalarProperty Name="TaksID" ColumnName="TaksID" />
@@ -58,6 +61,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="CRMModel.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="Name" ColumnName="Name" />

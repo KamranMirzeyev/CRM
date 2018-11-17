@@ -18,6 +18,7 @@ namespace CRM.Model
         public int TaksID { get; set; }
         public byte NotificationType { get; set; }
         public bool IsActive { get; set; }
+        public System.DateTime Create { get; set; }
     
         public virtual Task Task { get; set; }
     }

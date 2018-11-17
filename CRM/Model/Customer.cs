@@ -28,6 +28,7 @@ namespace CRM.Model
         public string Mobile { get; set; }
         public string OfficeNumber { get; set; }
         public string Email { get; set; }
+        public System.DateTime CreateAt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }

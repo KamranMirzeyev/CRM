@@ -1,12 +1,100 @@
-﻿<Window x:Class="CRM.Report"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM"
+        xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" x:Class="CRM.Report"
         mc:Ignorable="d"
-        Title="Report" Height="450" Width="800">
+        Title="Report" Height="686" Width="1047.5" Background="#FFE0F2F1">
     <Grid>
-        
+
+        <Grid Height="Auto"  Margin="0,91,0,298" x:Name="Users">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="59*"/>
+                <ColumnDefinition Width="27*"/>
+            </Grid.ColumnDefinitions>
+            <Grid HorizontalAlignment="Left" Height="192" Margin="30,41,0,0" VerticalAlignment="Top" Width="296" Background="#006064">
+                <Label x:Name="label1" Content="Bitmiş tasklar:" HorizontalAlignment="Left" Margin="40,31,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
+                <Label x:Name="label1_Copy" Content="Bitməmiş tasklar:" HorizontalAlignment="Left" Margin="40,58,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
+                <Label x:Name="label1_Copy1" Content="Bütün tasklar:" HorizontalAlignment="Left" Margin="40,85,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
+
+                <Label x:Name="label1_Copy5" Content="Bitmiş tasklar:" HorizontalAlignment="Left" Margin="64,327,0,-158" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
+                <Label x:Name="label1_Copy6" Content="Bitməmiş tasklar:" HorizontalAlignment="Left" Margin="64,354,0,-185" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
+                <Label x:Name="label1_Copy7" Content="Bütün tasklar:" HorizontalAlignment="Left" Margin="64,381,0,-212" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
+                <dxc:ChartControl HorizontalAlignment="Left" Margin="317,-23,-638,0" VerticalAlignment="Top" Width="617" Height="215">
+                    <dxc:ChartControl.CrosshairOptions>
+                        <dxc:CrosshairOptions ShowArgumentLabels="True" ShowOutOfRangePoints="True" ShowValueLabels="True" ShowValueLine="True"/>
+                    </dxc:ChartControl.CrosshairOptions>
+                    <dxc:ChartControl.Legends>
+                        <dxc:Legend Width="192"/>
+                    </dxc:ChartControl.Legends>
+                    <dxc:XYDiagram2D FontFamily="Verdana" Width="352">
+                        <dxc:BarSideBySideSeries2D DisplayName="Bütün tasklar" >
+                            <dxc:BarSideBySideSeries2D.Model>
+                                <dxc:Quasi3DBar2DModel />
+                            </dxc:BarSideBySideSeries2D.Model>
+                            <dxc:SeriesPoint x:Name="curventAllTask" Argument="Tasklar" Value="0"/>
+                        </dxc:BarSideBySideSeries2D>
+                        <dxc:BarSideBySideSeries2D DisplayName="Bitməmiş tasklar" >
+                            <dxc:BarSideBySideSeries2D.Model>
+                                <dxc:Quasi3DBar2DModel/>
+                            </dxc:BarSideBySideSeries2D.Model>
+                            <dxc:SeriesPoint x:Name="curventCompleteTask" Argument="Tasklar" Value="0"/>
+                        </dxc:BarSideBySideSeries2D>
+                        <dxc:BarSideBySideSeries2D DisplayName="Xatırlamalar" >
+                            <dxc:BarSideBySideSeries2D.Model>
+                                <dxc:Quasi3DBar2DModel/>
+                            </dxc:BarSideBySideSeries2D.Model>
+                            <dxc:SeriesPoint  x:Name="notification" Argument="Hesabat" Value="0"/>
+                        </dxc:BarSideBySideSeries2D>
+                        <dxc:BarSideBySideSeries2D DisplayName="Yeni istifadəçilər" >
+                            <dxc:BarSideBySideSeries2D.Model>
+                                <dxc:Quasi3DBar2DModel/>
+                            </dxc:BarSideBySideSeries2D.Model>
+                            <dxc:SeriesPoint x:Name="NewUsers" Argument="Hesabat" Value="0"/>
+                        </dxc:BarSideBySideSeries2D>
+                        <dxc:BarSideBySideSeries2D DisplayName="Yeni şirkətlər">
+                            <dxc:BarSideBySideSeries2D.Model>
+                                <dxc:Quasi3DBar2DModel/>
+                            </dxc:BarSideBySideSeries2D.Model>
+                            <dxc:SeriesPoint x:Name="NewCompany" Argument="Hesabat" Value="0"/>
+                        </dxc:BarSideBySideSeries2D>
+                        <dxc:BarSideBySideSeries2D DisplayName="Vaxtında olunmamış tasklar" >
+                            <dxc:BarSideBySideSeries2D.Model>
+                                <dxc:Quasi3DBar2DModel/>
+                            </dxc:BarSideBySideSeries2D.Model>
+                            <dxc:SeriesPoint x:Name="IncompleteTask" Argument="Hesabat" Value="0"/>
+                        </dxc:BarSideBySideSeries2D>
+                        <dxc:BarSideBySideSeries2D DisplayName="Commentlər">
+                            <dxc:BarSideBySideSeries2D.Model>
+                                <dxc:Quasi3DBar2DModel/>
+                            </dxc:BarSideBySideSeries2D.Model>
+                            <dxc:SeriesPoint x:Name="AllComment" Argument="Hesabat" Value="0"/>
+                        </dxc:BarSideBySideSeries2D>
+                    </dxc:XYDiagram2D>
+                </dxc:ChartControl>
+                <Label x:Name="lblAllTask" Content="" HorizontalAlignment="Left" Margin="153,87,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White"/>
+                <Label x:Name="lblCurventCompleteTask" Content="" HorizontalAlignment="Left" Margin="171,60,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <Label x:Name="lblCompetedTask" Content="" HorizontalAlignment="Left" Margin="152,34,0,0" VerticalAlignment="Top" Foreground="White"/>
+            </Grid>
+
+        </Grid>
+        <Grid Margin="0,397,0,12" x:Name="admin" >
+            <Grid HorizontalAlignment="Left" Height="192" Margin="28,28,0,0" VerticalAlignment="Top" Width="296" Background="#006064">
+                <Label x:Name="label2" Content="Bitmiş tasklar:" HorizontalAlignment="Left" Margin="32,56,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Foreground="White"/>
+                <Label x:Name="label2_Copy" Content="Bitməmiş tasklar:" HorizontalAlignment="Left" Margin="32,86,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Foreground="White"/>
+                <Label x:Name="label2_Copy1" Content="Bütün tasklar:" HorizontalAlignment="Left" Margin="32,118,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Foreground="White"/>
+            </Grid>
+        </Grid>
+        <DatePicker HorizontalAlignment="Left" Margin="550,52,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="704,52,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label" Content="Hesabatlar" HorizontalAlignment="Left" Margin="412,10,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
+
+
+
+
+
+
     </Grid>
 </Window>

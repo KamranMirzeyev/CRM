@@ -194,7 +194,8 @@ namespace CRM
            MessageBoxResult mbr=  MessageBox.Show("Çıxmaq istədiyinizdən əminsiz?", "Çıxış", MessageBoxButton.YesNo,MessageBoxImage.Question);
             if (mbr == MessageBoxResult.Yes)
             {
-               
+                string username = db.Users.FirstOrDefault(x => x.UserId == currentUserID).UserName;
+                Logger.Write("success",username+ " sistemdən çıxdı");
                 this.Close();
             }
            

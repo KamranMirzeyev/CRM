@@ -229,10 +229,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Content\images\logout.png" />
-    <Resource Include="Content\images\logot.ico" />
-    <Resource Include="Content\images\checked.png" />
-    <Resource Include="Content\images\uncheck.png" />
+    <Resource Include="Logs\17.11.2018.txt" />
     <Content Include="Model\Database.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Database.edmx</DependentUpon>
@@ -258,8 +255,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

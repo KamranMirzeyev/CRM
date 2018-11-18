@@ -1,0 +1,62 @@
+18.11.2018 14:07:06 Success : Proqrama daxil olundu
+18.11.2018 14:07:16 success : Kamran proqrama daxil oldu
+18.11.2018 14:08:12 success : Kamran sistemdən çıxdı
+18.11.2018 14:10:05 Success : Proqrama daxil olundu
+18.11.2018 14:10:12 success : Kamran proqrama daxil oldu
+18.11.2018 14:10:46 success : Kamran sistemdən çıxdı
+18.11.2018 14:33:45 Success : Proqrama daxil olundu
+18.11.2018 14:33:58 success : Kamran proqrama daxil oldu
+18.11.2018 14:34:41 success : Kamran sistemdən çıxdı
+18.11.2018 14:38:48 Success : Proqrama daxil olundu
+18.11.2018 14:38:55 success : Kamran proqrama daxil oldu
+18.11.2018 14:39:15 success : Kamran sistemdən çıxdı
+18.11.2018 14:40:51 Success : Proqrama daxil olundu
+18.11.2018 14:40:57 success : Kamran proqrama daxil oldu
+18.11.2018 14:42:49 Success : Proqrama daxil olundu
+18.11.2018 14:42:55 success : Kamran proqrama daxil oldu
+18.11.2018 14:43:12 success : Kamran sistemdən çıxdı
+18.11.2018 14:51:09 Success : Proqrama daxil olundu
+18.11.2018 14:51:16 success : Kamran proqrama daxil oldu
+18.11.2018 14:53:46 success : Kamran sistemdən çıxdı
+18.11.2018 14:56:48 Success : Proqrama daxil olundu
+18.11.2018 14:57:07 success : Kamran proqrama daxil oldu
+18.11.2018 14:57:57 success : Kamran sistemdən çıxdı
+18.11.2018 15:01:38 Success : Proqrama daxil olundu
+18.11.2018 15:02:09 success : Kamran proqrama daxil oldu
+18.11.2018 15:02:53 success : Kamran sistemdən çıxdı
+18.11.2018 15:07:50 Success : Proqrama daxil olundu
+18.11.2018 15:07:58 success : Kamran proqrama daxil oldu
+18.11.2018 15:09:08 Success : Proqrama daxil olundu
+18.11.2018 15:09:15 success : Kamran proqrama daxil oldu
+18.11.2018 15:10:35 success : Kamran sistemdən çıxdı
+18.11.2018 15:11:42 Success : Proqrama daxil olundu
+18.11.2018 15:11:58 success : Kamran proqrama daxil oldu
+18.11.2018 15:12:34 success : Kamran sistemdən çıxdı
+18.11.2018 15:15:13 Success : Proqrama daxil olundu
+18.11.2018 15:15:21 success : Kamran proqrama daxil oldu
+18.11.2018 15:15:42 success : Kamran sistemdən çıxdı
+18.11.2018 15:19:58 Success : Proqrama daxil olundu
+18.11.2018 15:20:04 success : Kamran proqrama daxil oldu
+18.11.2018 15:22:41 success : Kamran yeni şirkət əlavə etdi
+18.11.2018 15:22:56 success : Kamran Lenkaran MMC şirkətini sildi
+18.11.2018 15:24:10 success : AdminHemid adda yeni bir istifadəçi yaratdı
+18.11.2018 15:24:20 success : Admin Hemid adlı istifadəçini sildi
+18.11.2018 15:24:28 success : Kamran sistemdən çıxdı
+18.11.2018 15:32:49 Success : Proqrama daxil olundu
+18.11.2018 15:36:22 Success : Proqrama daxil olundu
+18.11.2018 15:38:04 Success : Proqrama daxil olundu
+18.11.2018 15:38:25 Success : Proqrama daxil olundu
+18.11.2018 15:39:05 error : Username ve ya parolunu sehv daxil edib
+18.11.2018 15:39:24 Success : Proqrama daxil olundu
+18.11.2018 15:39:33 error : Username ve ya parolunu sehv daxil edib
+18.11.2018 15:39:48 success : Kamran proqrama daxil oldu
+18.11.2018 15:40:57 success : Kamran sistemdən çıxdı
+18.11.2018 15:43:33 Success : Proqrama daxil olundu
+18.11.2018 15:43:40 success : Kamran proqrama daxil oldu
+18.11.2018 15:44:18 success : Kamran sistemdən çıxdı
+18.11.2018 16:31:48 Success : Proqrama daxil olundu
+18.11.2018 16:31:56 success : Kamran proqrama daxil oldu
+18.11.2018 16:32:12 success : Kamran sistemdən çıxdı
+18.11.2018 16:41:24 Success : Proqrama daxil olundu
+18.11.2018 16:41:31 success : Kamran proqrama daxil oldu
+18.11.2018 16:42:03 success : Kamran sistemdən çıxdı

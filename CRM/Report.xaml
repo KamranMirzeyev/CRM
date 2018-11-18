@@ -6,30 +6,26 @@
         xmlns:local="clr-namespace:CRM"
         xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" x:Class="CRM.Report"
         mc:Ignorable="d"
-        Title="Report" Height="686" Width="1047.5" Background="#FFE0F2F1">
-    <Grid>
+        Title="Report" Height="446.475" Width="1047.5" Background="#FFE0F2F1" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,-4">
 
-        <Grid Height="Auto"  Margin="0,91,0,298" x:Name="Users">
+        <Grid Height="Auto"  Margin="0,91,0,10" x:Name="Users">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="59*"/>
                 <ColumnDefinition Width="27*"/>
             </Grid.ColumnDefinitions>
-            <Grid HorizontalAlignment="Left" Height="192" Margin="30,41,0,0" VerticalAlignment="Top" Width="296" Background="#006064">
+            <Grid HorizontalAlignment="Left" Height="158" Margin="30,41,0,0" VerticalAlignment="Top" Width="296" Background="#006064">
                 <Label x:Name="label1" Content="Bitmiş tasklar:" HorizontalAlignment="Left" Margin="40,31,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
                 <Label x:Name="label1_Copy" Content="Bitməmiş tasklar:" HorizontalAlignment="Left" Margin="40,58,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
                 <Label x:Name="label1_Copy1" Content="Bütün tasklar:" HorizontalAlignment="Left" Margin="40,85,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
-
-                <Label x:Name="label1_Copy5" Content="Bitmiş tasklar:" HorizontalAlignment="Left" Margin="64,327,0,-158" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
-                <Label x:Name="label1_Copy6" Content="Bitməmiş tasklar:" HorizontalAlignment="Left" Margin="64,354,0,-185" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
-                <Label x:Name="label1_Copy7" Content="Bütün tasklar:" HorizontalAlignment="Left" Margin="64,381,0,-212" VerticalAlignment="Top" Foreground="White" FontFamily="Verdana" FontSize="14"/>
-                <dxc:ChartControl HorizontalAlignment="Left" Margin="317,-23,-638,0" VerticalAlignment="Top" Width="617" Height="215">
+                <dxc:ChartControl HorizontalAlignment="Left" Margin="317,-23,-684,-60" VerticalAlignment="Top" Width="663" Height="275">
                     <dxc:ChartControl.CrosshairOptions>
                         <dxc:CrosshairOptions ShowArgumentLabels="True" ShowOutOfRangePoints="True" ShowValueLabels="True" ShowValueLine="True"/>
                     </dxc:ChartControl.CrosshairOptions>
                     <dxc:ChartControl.Legends>
-                        <dxc:Legend Width="192"/>
+                        <dxc:Legend Width="190"/>
                     </dxc:ChartControl.Legends>
-                    <dxc:XYDiagram2D FontFamily="Verdana" Width="352">
+                    <dxc:XYDiagram2D FontFamily="Verdana" Margin="0,0,0,24" >
                         <dxc:BarSideBySideSeries2D DisplayName="Bütün tasklar" >
                             <dxc:BarSideBySideSeries2D.Model>
                                 <dxc:Quasi3DBar2DModel />
@@ -76,20 +72,24 @@
                 </dxc:ChartControl>
                 <Label x:Name="lblAllTask" Content="" HorizontalAlignment="Left" Margin="153,87,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White"/>
                 <Label x:Name="lblCurventCompleteTask" Content="" HorizontalAlignment="Left" Margin="171,60,0,0" VerticalAlignment="Top" Foreground="White"/>
-                <Label x:Name="lblCompetedTask" Content="" HorizontalAlignment="Left" Margin="152,34,0,0" VerticalAlignment="Top" Foreground="White"/>
+                <Label x:Name="lblCompetedTask" Content="" HorizontalAlignment="Left" Margin="152,32,0,0" VerticalAlignment="Top" Foreground="White"/>
             </Grid>
 
         </Grid>
-        <Grid Margin="0,397,0,12" x:Name="admin" >
+        <!--<Grid Margin="0,397,0,12" x:Name="admin" >
             <Grid HorizontalAlignment="Left" Height="192" Margin="28,28,0,0" VerticalAlignment="Top" Width="296" Background="#006064">
                 <Label x:Name="label2" Content="Bitmiş tasklar:" HorizontalAlignment="Left" Margin="32,56,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Foreground="White"/>
                 <Label x:Name="label2_Copy" Content="Bitməmiş tasklar:" HorizontalAlignment="Left" Margin="32,86,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Foreground="White"/>
                 <Label x:Name="label2_Copy1" Content="Bütün tasklar:" HorizontalAlignment="Left" Margin="32,118,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14" Foreground="White"/>
             </Grid>
-        </Grid>
-        <DatePicker HorizontalAlignment="Left" Margin="550,52,0,0" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" Margin="704,52,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label" Content="Hesabatlar" HorizontalAlignment="Left" Margin="412,10,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
+        </Grid>-->
+        <DatePicker x:Name="dtpStart" HorizontalAlignment="Left" Margin="676,65,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dtpEnd" HorizontalAlignment="Left" Margin="802,65,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.833,-0.292"/>
+        <Label x:Name="label" Content="Hesabatlar" HorizontalAlignment="Left" Margin="489,10,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="16"/>
+        <Label x:Name="label2" Content="Başlama vaxtı" HorizontalAlignment="Left" Margin="676,46,0,0" VerticalAlignment="Top" FontFamily="Verdana"/>
+        <Label x:Name="label2_Copy" Content="Bitmə vaxtı" HorizontalAlignment="Left" Margin="803,46,0,0" VerticalAlignment="Top" FontFamily="Verdana"/>
+        <Button x:Name="button" Content="Göstər" HorizontalAlignment="Left" Margin="932,65,0,0" VerticalAlignment="Top" Width="75" FontFamily="Verdana" Background="#FF14B20D" Click="button_Click"/>
+        <Label x:Name="label3" Content="Tarixlər arasındakı hesabat" HorizontalAlignment="Left" Margin="697,18,0,0" VerticalAlignment="Top" FontFamily="Verdana" FontSize="14"/>
 
 
 

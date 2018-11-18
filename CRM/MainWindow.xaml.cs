@@ -25,7 +25,7 @@ namespace CRM
             string surname = db.Users.FirstOrDefault(x => x.UserId == currentUserID).Surname;
 
             lblCurventUser.Content = name + " " + surname;
-
+            Notification();
 
         }
 

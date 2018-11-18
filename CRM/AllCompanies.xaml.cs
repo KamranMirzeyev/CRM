@@ -39,7 +39,7 @@ namespace CRM
                 Customer cus = db.Customers.FirstOrDefault(x => x.CustomerId==custom.CustomerId);
                 db.Customers.Remove(cus);
                 db.SaveChanges();
-                MessageBox.Show("Istifadəçi silindi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Şirkət silindi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
                 string username = db.Users.FirstOrDefault(x => x.UserId == UserId).UserName;
                 Logger.Write("success",username+" " +cus.CustomerName +" şirkətini sildi");
                 this.Close();
@@ -59,6 +59,7 @@ namespace CRM
             c.AllCompany = this;
             c.ModelCustomer = db.Customers.Find(customer.CustomerId);
             c.ShowDialog();
+
 
         }
     }

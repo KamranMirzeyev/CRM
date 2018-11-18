@@ -80,14 +80,14 @@ namespace CRM
 
                 }
 
+
             }
             //User olmasa mesaj cixartma
-            else
-            {
+           
                 MessageBox.Show("Belə bir istiadəçi yoxdur", "Xəta", MessageBoxButton.OK, MessageBoxImage.Information);
                 Logger.Write("error","Username ve ya parolunu sehv daxil edib");
                 return;
-            }
+            
 
         }
     }

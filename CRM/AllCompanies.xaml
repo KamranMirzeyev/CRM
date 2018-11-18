@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRM"
         mc:Ignorable="d"
-        Title="AllCompanies" Height="450" Width="391.209" Background="#FFD50000">
+        Title="AllCompanies" Height="450" Width="391.209" Background="#FFD50000" WindowStartupLocation="CenterScreen" FontFamily="Verdana">
     <Grid>
         <Button x:Name="btnCompanyUpdate" Content="Yenilə" HorizontalAlignment="Left" Margin="147,144,0,0" VerticalAlignment="Top" Width="120" Height="30" FontFamily="Verdana" FontSize="14" Click="btnCompanyUpdate_Click"/>
         <Button x:Name="btnCompanyDelete" Content="Sil" HorizontalAlignment="Left" Margin="147,221,0,0" VerticalAlignment="Top" Width="120" FontFamily="Verdana" FontSize="14" Height="30" Click="btnCompanyDelete_Click"/>

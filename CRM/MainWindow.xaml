@@ -15,8 +15,8 @@
             <Label x:Name="lblCurventUser" Content="" Height="27" VerticalAlignment="Top" Margin="1120,19,67,0" FontFamily="Verdana" FontSize="16" Foreground="White" TextOptions.TextHintingMode="Animated"/>
             <Image x:Name="image" HorizontalAlignment="Left" Height="37" Margin="1301,12,0,0" VerticalAlignment="Top" Width="58" Source="{dx:DXImage Image=BOCustomer_32x32.png}"/>
 
-            <Image Source="Content/images/logo.jpg" Margin="6,-2,1319,27"></Image>
-            <Image Source="Content/images/LogoText.png" Margin="36,8,1225,30"></Image>
+            <Image Source="Content/images/logo.jpg" Margin="6,-6,1319,31"></Image>
+            <Image Source="Content/images/LogoText.png" Margin="36,10,1225,35"></Image>
             <!--Menu hisse-->
             <Menu x:Name="Mainmenu" IsMainMenu="True" HorizontalAlignment="Left"  Height="51" Margin="238,6,0,0" Background="Transparent" Foreground="White" FontSize="24" VerticalAlignment="Top" Width="771">
 
@@ -75,8 +75,8 @@
 
         <!--Dashboard content-->
 
-        <Grid Grid.Row="0" x:Name="PnlDashboard" Margin="10,65,-10,-65">
-            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="10,222,0,70" IsReadOnly="True" SelectedCellsChanged="dgDashboard_SelectedCellsChanged" AutoGenerateColumns="False">
+        <Grid Grid.Row="0" x:Name="PnlDashboard" Margin="0,65,0,-65">
+            <DataGrid x:Name="dgDashboard" ItemsSource="{Binding VwTask}" Margin="0,222,10,70" IsReadOnly="True" SelectedCellsChanged="dgDashboard_SelectedCellsChanged" AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Id}"/>
                     <DataGridTextColumn Header="Şirkət" Width="120" Binding="{Binding Company}"/>

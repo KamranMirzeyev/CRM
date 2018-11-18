@@ -21,10 +21,13 @@ namespace CRM
         //userin kim oldugu tapilmasi
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //Giris eden adamin adini yazilmasi
             string name = db.Users.FirstOrDefault(x => x.UserId == currentUserID).Name;
             string surname = db.Users.FirstOrDefault(x => x.UserId == currentUserID).Surname;
 
             lblCurventUser.Content = name + " " + surname;
+
+            //notification ekrana ciardilmasi
             Notification();
 
         }
@@ -43,7 +46,8 @@ namespace CRM
         public void Notification()
         {
             CRMEntities dbs = new CRMEntities();
-
+            lblnotification.Content = "*** ";
+            //xatirlama elave edilmesine gore ekrana cixarilmasi
             foreach (Notification nt in dbs.Notifications.ToList())
             {
                 if (nt.Task.User.UserId == currentUserID && nt.IsActive == false)
@@ -51,7 +55,7 @@ namespace CRM
                     switch (nt.NotificationType)
                     {
                         case 1:
-
+                            //1 gun secilende
                             if (nt.Task.DeadlineTime.Subtract(DateTime.Now).TotalHours <= 24)
                             {
                                 lblnotification.Content +=
@@ -60,7 +64,7 @@ namespace CRM
 
                             break;
                         case 2:
-
+                            //3 gun secilende
                             if (nt.Task.DeadlineTime.Subtract(DateTime.Now).TotalHours > 24 &&
                                 nt.Task.DeadlineTime.Subtract(DateTime.Now).TotalHours < 72)
                             {
@@ -69,7 +73,7 @@ namespace CRM
                             }
 
                             break;
-
+                            //her gun secilende
                         case 3:
                             lblnotification.Content += nt.Task.Customer.CustomerName + " : " + nt.Task.Description + "*** ";
 
@@ -143,7 +147,7 @@ namespace CRM
 
         }
         
-        //company add olunma
+        //company add olunmasi ucun CustomerWPF cagirilmasi
         private void CompanyAdd_OnClick(object sender, RoutedEventArgs e)
         {
           CustomerWPF custom = new CustomerWPF();
@@ -151,12 +155,11 @@ namespace CRM
             custom.UserID = currentUserID;
             custom.Show();
         }
-        //task add olunma
+
+        //task add olunmasi ucun Task windowun cagirilmasi
         private void TaskAdd_OnClick(object sender, RoutedEventArgs e)
         {
             Task task = new Task(this);
-            //WindowInteropHelper help= new WindowInteropHelper(task);
-            //IntPtr hm = help.Handle;
             task.AddTaskButton();
             task.UserID = currentUserID;
             task.ShowDialog();

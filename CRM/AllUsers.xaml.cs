@@ -17,8 +17,9 @@ namespace CRM
         CRMEntities db =new CRMEntities();
 
         //comboboxun doldurulması
-        private void FillAllUserCmb()
+        public void FillAllUserCmb()
         {
+            cmbAllUser.Items.Clear();
             CRMEntities data = new CRMEntities();
             foreach (User user in data.Users.ToList())
             {
@@ -35,8 +36,8 @@ namespace CRM
             User user = cmbAllUser.SelectedItem as User;
             i.AdUpdateandDelete();
             i.Title = "Yenilə";
-            i.txtName.Text = user.Name;
             i.AllUsers = this;
+            i.txtName.Text = user.Name;
             i.ModelUser = db.Users.Find(user.UserId);
             i.ShowDialog();
         }

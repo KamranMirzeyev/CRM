@@ -12,15 +12,18 @@ namespace CRM
     public partial class Istifadəçi : Window
     {
         CRMEntities db = new CRMEntities();
-
+        //Modeldeki User -den instans alinmasi 
         public User ModelUser;
 
+        //AllUser window cagirilimasi
         public AllUsers AllUsers;
         public Istifadəçi()
         {
             InitializeComponent();
             FillCmbRole();
+            
         }
+
 
         //Role combobox doldurulmasi
 
@@ -32,12 +35,14 @@ namespace CRM
             }
         }
 
+
         //yeni istifadəçi yaradılarkən yenilə butonun gizlədilməsi
         public void AddButton()
         {
             btnUserUpdate.Visibility = Visibility.Hidden;
           
         }
+
 
         //istifadəçi yenilənərkən yadda saxla butonu gizlədildi
         public void AdUpdateandDelete()
@@ -77,7 +82,9 @@ namespace CRM
                 MessageBox.Show("Belə bir istifadəçi artıq var", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.None);
                 return;
             }
+            
             //yeni istifadecini elave olunmasi
+
             Role r = cmbRole.SelectedItem as Role;
 
             User u = new User();
@@ -91,10 +98,12 @@ namespace CRM
             u.RoleID = r.RoleId;
             db.Users.Add(u);
             db.SaveChanges();
+            AllUsers.FillAllUserCmb();
             MessageBox.Show("Yeni istifadəçi yaradıldı", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
+            Logger.Write("success", "Admin" + u.UserName + " adda yeni bir istifadəçi yaratdı");
             this.Close();
 
-            Logger.Write("success","Admin" + u.UserName + " adda yeni bir istifadəçi yaratdı");
+           
             //finish
         }
 
@@ -117,6 +126,7 @@ namespace CRM
            
         }
 
+        //ContentRenderde FillAllUser cagirildi
         private void Window_ContentRendered(object sender, System.EventArgs e)
         {
             FillAllUser();
@@ -155,6 +165,7 @@ namespace CRM
             u.Email = TxtEmail.Text;
             u.RoleID = r.RoleId;
             db.SaveChanges();
+            AllUsers.FillAllUserCmb();
             MessageBox.Show("Yeni istifadəçi yeniləndi", "Bildiriş", MessageBoxButton.OK, MessageBoxImage.Information);
             Logger.Write("success","Admin "+ u.UserName + " istifadəçisinin profilində dəyişiklik etdi");
             this.Close();

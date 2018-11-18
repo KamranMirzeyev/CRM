@@ -60,3 +60,30 @@
 18.11.2018 16:41:24 Success : Proqrama daxil olundu
 18.11.2018 16:41:31 success : Kamran proqrama daxil oldu
 18.11.2018 16:42:03 success : Kamran sistemdən çıxdı
+18.11.2018 19:23:36 Success : Proqrama daxil olundu
+18.11.2018 19:23:46 success : Kamran proqrama daxil oldu
+18.11.2018 19:23:54 success : Kamran taskda yeniləmək metodu çağırdı
+18.11.2018 19:24:17 success : Kamran taskı yenilədi
+18.11.2018 19:24:51 success : Kamran sistemdən çıxdı
+18.11.2018 19:26:20 Success : Proqrama daxil olundu
+18.11.2018 19:26:27 success : Kamran proqrama daxil oldu
+18.11.2018 19:26:32 success : Kamran taskda yeniləmək metodu çağırdı
+18.11.2018 19:27:04 success : Kamran taskı yenilədi
+18.11.2018 19:27:26 success : Kamran sistemdən çıxdı
+18.11.2018 19:30:31 Success : Proqrama daxil olundu
+18.11.2018 19:30:42 success : Kamran proqrama daxil oldu
+18.11.2018 19:30:56 success : Kamran sistemdən çıxdı
+18.11.2018 19:31:11 Success : Proqrama daxil olundu
+18.11.2018 19:31:18 success : Kamran proqrama daxil oldu
+18.11.2018 19:32:01 success : Kamran yeni bir rəy yaratdı
+18.11.2018 19:32:35 success : Admin Ulvi Ibragimov istifadəçisinin profilində dəyişiklik etdi
+18.11.2018 19:33:28 success : Kamran sistemdən çıxdı
+18.11.2018 19:54:01 Success : Proqrama daxil olundu
+18.11.2018 19:54:10 success : Kamran proqrama daxil oldu
+18.11.2018 19:54:26 success : Admin Ulvi Ibragimov istifadəçisinin profilində dəyişiklik etdi
+18.11.2018 19:54:41 success : Kamran sistemdən çıxdı
+18.11.2018 19:55:28 Success : Proqrama daxil olundu
+18.11.2018 19:55:36 success : Kamran proqrama daxil oldu
+18.11.2018 19:55:49 success : Admin Ulvi Ibragimov istifadəçisinin profilində dəyişiklik etdi
+18.11.2018 19:56:08 success : Admin Ulvi Ibragimov istifadəçisinin profilində dəyişiklik etdi
+18.11.2018 19:56:44 success : Kamran sistemdən çıxdı
